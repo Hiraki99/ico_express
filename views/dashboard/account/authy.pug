@@ -1,0 +1,97 @@
+extends ../../layout_dashboard
+block content_dashboard
+    //- link(href='css/bootstrap_datepicker/bootstrap.min.css', rel='stylesheet')
+    .row
+        .col-lg-12
+            .card
+                .card-body.authy
+                    #status_twoFA.form-validation
+                        .cta-txt
+                            p
+                                span(translate-once='low_account_security') Low account security
+                                span : 
+                                span(translate-once='two_factor_disabled_text')
+                                  | Authy Authentication is
+                                  if enable_2FA == '0'
+                                    strong#warning.text-warning 
+                                      |  DISABLED
+                                  else
+                                    strong#warning.text-warning 
+                                      |  ENABLE
+
+                        .form-group
+                              if enable_2FA == '0'
+                                button#enable_two_fa.btn.btn-primary.btn-flat(type='submit') Enable Two 2FA
+                                button#disable_two_fa.btn.btn-primary.btn-flat(type='submit',style='display:none') Disable Two 2FA
+                              else
+                                button#enable_two_fa.btn.btn-primary.btn-flat(type='submit',style='display:none') Enable Two 2FA
+                                button#disable_two_fa.btn.btn-primary.btn-flat(type='submit') Disable Two 2FA
+                    #two-factor-enabling(style='display:none')
+                      #update_authy.form-horizontal(name='update_authy')
+                        .form-group.row
+            
+                          .col-sm-offset-3.col-sm-9.auth-input.col-lg-6.qr-pad
+                            if enable_2FA = 1
+                              center
+                                img(src=qr_code)
+                        .form-group.row
+                          .col-sm-offset-3.col-sm-6.col-lg-2
+                          .col-sm-offset-3.col-sm-7.auth-des
+                            span(translate-once='two_factor_enabling_text')
+                              | Protect your user account by entering a one time code every time you withdraw fund or make deposit.
+                              br
+                              | We recommend 
+                              b Authy
+                              |  for 
+                              a(href='https://itunes.apple.com/us/app/authy/id494168017', target='_blank', style='color: #ff0000 !important;') iOS
+                              |  or 
+                              a(href='https://play.google.com/store/apps/details?id=com.authy.authy&hl=en', target='_blank', style='color: #ff0000 !important;') Android
+                              | .
+                        .form-group.row
+                          label.col-sm-3.col-lg-2(translate-once='two_factor_key_placeholder',style='margin-left:4vw;margin-bottom: 0px;margin-top: 10px;') Authentication key
+                          .col-sm-9.auth-input
+                            input#two-factor-key.twofa.form-control(readonly='true', name='two_factor_key', value=authy_key, type='text')
+                        .form-group.row
+                          label.col-sm-3.col-lg-2(for='two-factor-code', translate-once='two_factor_code_placeholder',style='margin-left:4vw;margin-bottom: 0px;margin-top: 10px;') Authy authentication code
+                          .col-sm-9.auth-input
+                            input#two-factor-code.twofa.form-control(name='two_factor_code', required='', type='text')
+                            span#two_factor_code-error.field-validation-error.bg-danger
+                              span
+                        .form-group
+
+                          .col-sm-offset-3.col-sm-10
+                            button#two-factor-btn.btn.btn-primary.btn-enable-two-factor(type='submit') Enable Auth
+                            button#btn_cancel_authy.btn.btn-primary(style='background-color:#999999') Cancel
+
+
+        
+                    .content-userguide
+                      .step1
+                        h4
+                          strong.ng-scope(translate='settings_step', translate-values='{ step: 1 }')
+                            span.ng-scope Step 1:
+                          span(translate-once='two_factor_register_with_phone') Register with your phone number
+                        .row.text-center.col-sm-12
+                          .col-sm-4.imgauthy
+                            img.pad-b-20(alt='registration step one', cdn-src='', src='/images/tutorial-1.png')
+                            p(translate-once='two_factor_enter_phone_number') Enter your phone number
+                          .col-sm-4.imgauthy
+                            img.pad-b-20(alt='registration step two', cdn-src='', src='/images/tutorial-2.png')
+                            p(translate-once='two_factor_ask_email') If you don't have an account, we'll ask for your e-mail to create one
+                          .col-sm-4.imgauthy
+                            img.pad-b-20(alt='registration step three', cdn-src='', src='/images/tutorial-3.png')
+                            p(translate-once='two_factor_confirm_registration_pin') Receive registration pin via phone call or SMS and input here
+                      .step2
+                        h4
+                          strong.ng-scope(translate='settings_step', translate-values='{ step: 2 }')
+                            span.ng-scope Step 2:
+                          span(translate-once='two_factor_add_app') Add an application and get OTP
+                        .row.text-center.col-sm-12
+                          .col-sm-6.imgauthy
+                            img.pad-b-20(alt='registration step one', cdn-src='', src='/images/tutorial-4.png')
+                            p(translate-once='two_factor_scan_qr') Scan QR
+                          .col-sm-6.imgauthy
+                            img.pad-b-20(alt='registration step two', cdn-src='', src='/images/tutorial-5.png')
+                            p(translate-once='two_factor_open_get_otp') Open Authy app and get OTP when asked
+                      .clearfix
+                script(src='/javascript/dashboard/auth.js')

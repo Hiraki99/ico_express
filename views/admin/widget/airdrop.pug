@@ -1,0 +1,110 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    .page-titles
+        .col-lg-8.offset-lg-2
+            if(!data)
+                h2(style='padding: 20px')
+                    center Create Airdrop
+                .card
+                    .card-body
+                        .form-validation
+                            form.form-valide(action='/admin/createairdrop',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Title 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        input#val-username.form-control(type='text', name='titledrop', placeholder='Enter a title..')
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-email')
+                                        | Content 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        textarea#val-suggestions.textarea_editor.form-control(name='content', placeholder='What would you like to see?',rows='15',style='height:150px')
+                                .form-group.row
+                                    label.col-lg-4.control-label
+                                        | Input Select 
+                                        span.text-danger *
+                                    .col-sm-8
+                                        select.form-control(name='process_status')
+                                            option(value='1') Important
+                                            option(value='2') Waiting
+                                            
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Bonus 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        input.form-control(type='number', name='bonus', placeholder='Enter a title..')
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Link 
+                                    .col-lg-8
+                                        input#val-username.form-control(type='text', name='link', placeholder='Enter a title..')
+                                .form-group.row
+                                    .col-lg-8.ml-auto
+                                        button.btn.btn-primary(type='submit') Submit
+            else
+                h2(style='padding: 20px')
+                    center Airdrop 
+                        b #{data.title}
+                .card
+                    .card-body
+                        .form-validation
+                            form.form-valide(action='/admin/saveupdateairdrop',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                input(name='airdropid', value=data.id, style='display:none')
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Title 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        input#val-username.form-control(type='text', name='titledrop', placeholder='Enter a title..', value = data.title)
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-email')
+                                        | Content 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        textarea#val-suggestions.textarea_editor.form-control(name='content', placeholder='What would you like to see?',data-content=data.content,rows='15',style='height:150px')
+                                .form-group.row
+                                    label.col-lg-4.control-label
+                                        | Input Select 
+                                        span.text-danger *
+                                    .col-sm-8
+                                        select.form-control(name='process_status')
+                                            option(value='1',selected =(data.level == 1) ) Important
+                                            option(value='2',selected =(data.level == 2) ) Waiting
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Bonus 
+                                        span.text-danger *
+                                    .col-lg-8
+                                        input.form-control(type='number', name='bonus', placeholder='Enter number bonus',value= data.bonus)
+                                .form-group.row
+                                    label.col-lg-4.col-form-label(for='val-username')
+                                        | Link 
+                                    .col-lg-8
+                                        input#val-username.form-control(type='text', name='link', value=data.link, placeholder='Enter a title..')
+                                .form-group.row
+                                    label.col-lg-4.control-label
+                                        | Locked
+                                        span.text-danger *
+                                    .col-sm-8
+                                        select.form-control(name='status_locked')
+                                            option(value='0', selected =(data.is_locked == 0)) Unlock
+                                            option(value='1',selected =(data.is_locked == 1)) Lock
+                                .form-group.row
+                                    .col-lg-8.ml-auto
+                                        button.btn.btn-primary(type='submit') Update
+    script(src='/assets/plugins/wysihtml5/js/wysihtml5-0.3.0.js')
+    script(src='/assets/plugins/wysihtml5/js/bootstrap-wysihtml5.js')
+    script.
+        $(document).ready(function() {
+            $('#val-suggestions').wysihtml5();
+            var editorObj = $("#val-suggestions").data('wysihtml5');
+            var editor = editorObj.editor;
+            editor.setValue($("#val-suggestions").data('content'));
+        });
+
+            

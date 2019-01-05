@@ -1,0 +1,103 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(href='/main/scss/mycss/notify.css', rel='stylesheet')
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    
+    .row.page-titles
+        // create new notification
+        .col-lg-9.offset-lg-2
+            if(data == null)
+                h2
+                    center Create New Notification
+                .card
+                    .card-body
+                        .form-validation
+                            form.form-valide(action='/admin/createnotify',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Title 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        input#val-username.form-control(type='text', name='notifititle', placeholder='Enter a title..')
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Content 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        textarea#val-suggestions.textarea_editor.form-control(name='noticontent', placeholder='What would you like to see?',rows='15',style='height:300px')
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Link 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        input#val-password.form-control(type='text', name='notilink', placeholder='add link..')
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Image 
+                                        span.text-danger *
+                                    input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                        .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                            div(ref='uploadForm')
+                                                img#image_front
+                                .form-group.row
+                                    .col-lg-9.ml-auto
+                                        button.btn.btn-primary(type='submit') Submit
+            else
+                .card
+                    .card-body
+                        .form-validation
+                            form.form-valide(action='/admin/saveupdatenotify',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                input(style='display:none', value=data.id,type='text',name='notifyid')
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Title 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        input#val-username.form-control(type='text', name='notifititle', placeholder='Enter a title..',value=data.title)
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Content 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        textarea#val-suggestions.textarea_editor.form-control(name='noticontent', placeholder='What would you like to see?',rows='15',style='height:300px',data-content=data.description)
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Link 
+                                        span.text-danger *
+                                    .col-lg-9
+                                        input#val-password.form-control(type='text', name='notilink', placeholder='add link..',value=data.link)
+                                
+                                .form-group.row
+                                    label.col-lg-3.col-form-label
+                                        | Image 
+                                        span.text-danger *
+                                    input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                        .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                            div(ref='uploadForm')
+                                                img#image_front(src='/image_notify/'+data.url_img)
+                                .form-group.row
+                                    .col-lg-9.ml-auto
+                                        button.btn.btn-primary(type='submit') Update
+    script(src='/assets/plugins/wysihtml5/js/wysihtml5-0.3.0.js')
+    script(src='/assets/plugins/wysihtml5/js/bootstrap-wysihtml5.js')
+    
+    script.
+        $(document).ready(function() {
+            $('#val-suggestions').wysihtml5();
+            var editorObj = $("#val-suggestions").data('wysihtml5');
+            var editor = editorObj.editor;
+            editor.setValue($("#val-suggestions").data('content'));
+
+            document.getElementById("file_image").onchange = function () {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("image_front").src = e.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            };
+        });
+       

@@ -1,0 +1,56 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    //- link(href='/assets/css/vendor/bootstrap.min.css', rel='stylesheet')
+    .form-group
+        .row
+            .col-12
+                .card
+                    if(data==null)
+                        form#formvideo.card-body(action='/admin/addvideo',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Video title:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videotitle', value='',required='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Short Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videodescription', value='',required='')
+
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Link Video:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videolink', value='',required='')
+
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Submit
+                    else
+                        form#formvideo.card-body(action='/admin/modifyvideo',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            input.form-control(type='text', name='videoid', value=data.id,style='display:none')
+
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Video title:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videotitle', value=data.video_title,required='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Short Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videodescription', value=data.video_description,required='')
+
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Link Video:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='videolink', value=data.video_link,required='')
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Status Video:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val_identification.form-control(name='val_status')
+                                    option(value='enable',selected =(data.status == 'enable') ) Enable
+                                    option(value='disable',selected =(data.status == 'disable')) Disable
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Submit
+    
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+
+    

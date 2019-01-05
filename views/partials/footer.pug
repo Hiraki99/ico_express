@@ -1,0 +1,144 @@
+.section.subscribe-section.section-pad-md.section-bg.section-connect
+    .container
+        .row.text-center
+            .col-md-6.offset-md-3
+                h4.section-title-md.animated(data-animate='fadeInUp', data-delay='0') Don't miss out, Stay updated
+                form#subscribe-form.subscription-form.inline-form(action='form/subscribe.php', method='post')
+                    input.input-round.required.email(type='text', name='youremail', placeholder='Enter your email address')
+                    input.d-none(type='text', name='form-anti-honeypot', value='')
+                    button.btn.btn-plane(type='submit') Subscribe
+                    .subscribe-results
+.section.footer-scetion.no-pt.section-pad-sm.section-bg
+    .container
+        .row.text-center
+            .col-md-12
+                ul.social
+                    li.animated(data-animate='fadeInUp', data-delay='0')
+                        a(href='#')
+                            em.fa.fa-facebook
+                    li.animated(data-animate='fadeInUp', data-delay='.1')
+                        a(href='#')
+                            em.fa.fa-twitter
+                    li.animated(data-animate='fadeInUp', data-delay='.2')
+                        a(href='#')
+                            em.fa.fa-youtube-play
+                    li.animated(data-animate='fadeInUp', data-delay='.3')
+                        a(href='#')
+                            em.fa.fa-github
+                    li.animated(data-animate='fadeInUp', data-delay='.4')
+                        a(href='#')
+                            em.fa.fa-bitcoin
+                    li.animated(data-animate='fadeInUp', data-delay='.5')
+                        a(href='#')
+                            em.fa.fa-medium
+                span.copyright-text.animated(data-animate='fadeInUp', data-delay='.3')
+                    | Unibot © 2018, ICO Crypto
+
+#test-modal.mfp-hide.row
+    #form_login.col-lg-4.divcenter.login
+        .login-html.login-html-size
+            button.close(type="button",onclick='$.magnificPopup.instance.close()')
+                | &times
+            input.sign-up(type="radio",name="tab",checked="true")
+            label.tab(for="tab_1")
+                | Sign In
+            span#success_register(style='color: forestgreen;display:none;')
+            .form-message.text-center
+                .form-results
+                .input-field.animated(data-animate='fadeInUp', data-delay='.3')
+                    input#user_login.input-line.required(name='contact-name', type='text')
+                    label.input-title Username
+                    span#error_username_login(style='color: red;display:none;') Username is too short
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    input#pass_login.input-line.required.email(name='contact-email', type='password')
+                    label.input-title Password
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    input#pass_two_fa.input-line.required.email(name='contact-email', type='password')
+                    label.input-title Authy authentication code
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    center
+                        #recaptcha-1.g-recaptcha.captra
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4',style='display:none;')
+                    i#error_login.fa.fa-exclamation-circle(style='display:none;')
+                input.d-none(type='text', name='form-anti-honeypot', value='')
+                .input-field.animated(data-animate='fadeInUp', data-delay='.5')
+                    button#login_button.btn(type='submit', onclick='login();') Log In     
+    #loading_signin.divcenter(style='display:none;')
+        center
+            img.loading_index(src='/images/loading.gif')           
+
+#test-modal-siginup.mfp-hide.row
+    #form_signup.col-lg-4.divcenter.login
+        .login-html.login-html-size
+            button.close(type="button",onclick='$.magnificPopup.instance.close()')
+                | &times
+            input.sign-up(type="radio",name="tab",checked="true")
+            label.tab(for="tab_1")
+                | Sign Up
+            .form-message.text-center
+                .form-results
+                .input-field.animated(data-animate='fadeInUp', data-delay='.3')
+                    input#new_user.input-line.required(name='contact-name', type='text')
+                    label.input-title Username
+                    span#error_username(style='color: red;display:none;') Username is too short
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    input#new_pass.input-line.required.email(name='new-password', type='password')
+                    label.input-title Password
+                    span#error_password(style='color: red;display:none;') Password is invalid
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    input#repeat_new_pass.input-line.required.email(name='Repeat-password', type='password')
+                    label.input-title Repeat Password
+                    span#error_repeat_password(style='color: red;display:none;') Password is invalid
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    input#email.input-line.required.email(name='new-password', type='email')
+                    label.input-title Email Address
+                    span#error_email(style='color: red;display:none;') Email is invalid
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')
+                    center
+                        #recaptcha-2.g-recaptcha.captra
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4',style='display:none;')
+                    i#error_signup.fa.fa-exclamation-circle(style='display:none;')
+                input.d-none(type='text', name='form-anti-honeypot', value='')
+                .input-field.animated(data-animate='fadeInUp', data-delay='.5')
+                    button#login_button.btn(type='submit', onclick='signup();') Sign Up 
+    #verify_css.col-lg-4.divcenter.login(style='display:none;')
+        .login-html.login-html-size
+            button.close(type="button",onclick='$.magnificPopup.instance.close()')
+                | &times
+            input.sign-up(type="radio",name="tab",checked="true")
+            label.tab(for="tab_1")
+                | Register Successful
+            .form-message.text-center
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')  
+                    input.input-line(style='display:none')
+                    span#noti_signup.input-title(style='color: forestgreen;display:none;') Error
+                .input-field.animated(data-animate='fadeInUp', data-delay='.5')
+                    button.btn(type='submit', onclick='$.magnificPopup.instance.close();') Okie
+    #loading_signup.divcenter(style='display:none;')
+        center
+            img.loading_index(src='/images/loading.gif')
+#test-modal-resign.mfp-hide.row
+    #resend_verify.col-lg-4.divcenter.login
+        .login-html.login-html-size
+            button.close(type="button",onclick='$.magnificPopup.instance.close()')
+                | &times
+            input.sign-up(type="radio",name="tab",checked="true")
+            label.tab(for="tab_1")
+                | Notification
+            .form-message.text-center
+                .input-field.animated(data-animate='fadeInUp', data-delay='.4')  
+                    input.input-line(style='display:none')
+                    span#noti_signup_resend.input-title(style='color: red') 
+    #loading_resend.divcenter(style='display:none;')
+        center
+            img.loading_index(src='/images/loading.gif')             
+// End Section
+// Preloader !remove please if you do not want
+#preloader
+    #loader
+    .loader-section.loader-top
+    .loader-section.loader-bottom
+// Preloader End
+// JavaScript (include all script here)
+script(src='/assets/js/jquery.bundle.js?ver=111')
+script(src='/assets/js/script.js?ver=111')

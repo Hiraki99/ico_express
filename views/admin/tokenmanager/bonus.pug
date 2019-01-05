@@ -1,0 +1,47 @@
+extends ../../layoutadmin
+block content_dashboard
+    .page-titles
+        .row
+            .col-lg-6
+                .card(style='text-align: center; padding: 10px;margin: 20px')
+                    div#referal_ico
+                        h2 Send bonus + referal in preICO and ICO
+                        p Amount of account: 10000
+                        p Amount of UNI for bonus: 1000000
+                        button.btn.btn-flat.btn-success(type='button',style="width:100%") Send bonus in preICO and ICO
+                    .card(style='margin: 20px')
+                        .card-body
+                            h4.card-title Transaction
+                            .table-responsive
+                                table#list-trans-referal.nowrap.table.table-hover.table-striped(style='text-align: center;')
+                                    thead
+                                        tr
+                                            th #
+                                            th Tnx
+                                            th
+                                                | Status
+                                            th Fee
+                                    tbody
+                                        
+            .col-lg-6
+                .card(style='text-align: center; padding: 10px;margin: 20px')
+                    div#bonus_airdrop
+                        h2 Send bonus for Airdrop
+                        p Amount of account: 10000
+                        p Amount of UNI for bonus: 1000000
+                        button.btn.btn-flat.btn-success(type='button',style="width:100%") Send bonus for Airdrop
+                    .card(style='margin: 20px')
+                        .card-body
+                            h4.card-title Transaction
+                            .table-responsive
+                                table#list-trans-airdrop.nowrap.table.table-hover.table-striped(style='text-align: center;')
+                                    thead
+                                        tr
+                                            th #
+                                            th Tnx
+                                            th
+                                                | Status
+                                            th Fee
+                                    tbody
+                                       
+    script(src='/javascript/admin/bonus.js')

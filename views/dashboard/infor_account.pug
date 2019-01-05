@@ -1,0 +1,41 @@
+extends ../layout_dashboard
+block content_dashboard
+    //- link#bootstrap-css(href='/assets/css/bootstrap4/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/assets/css/form.css')
+    .row.justify-content-center.page-titles
+        .col-xs-12.col-sm-12.col-md-9.col-lg-9.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
+            .page-titles.panel-info
+                .panel-heading
+                    center 
+                        h2.panel-title(style='margin:30px') Profile 
+                        
+                .panel-body
+                    .row.justify-content-center
+                        .col-md-3.col-lg-3(align='center')
+                            img.img-circle.img-responsive(alt='User Pic', src=''+data.avatar,style='margin-top:10px; margin-bottom:5px')
+                            b #{data.user_name}
+                        .col-md-9.col-lg-9
+                            table.table.table-user-information(style='font-size:14px;')
+                                tbody
+                                    tr
+                                        td(style='width:65%') User Name:
+                                        td #{data.user_name}
+                                    
+                                    tr
+                                        td(style='width:65%') Name:
+                                        td #{data.name}
+                                    tr
+                                        td(style='width:65%') Phone Number:
+                                        td #{data.phone}
+                                    tr
+                                        td(style='width:65%') Identification:                 
+                                        td #{data.indentification}
+                                    tr
+                                        td(style='width:65%') National:
+                                        td #{data.national}
+                                    tr
+                                        td(style='width:65%') KYC status:
+                                        td #{data.kyc_status}
+                                    
+                                    
+                

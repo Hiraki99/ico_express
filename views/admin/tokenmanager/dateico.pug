@@ -1,0 +1,62 @@
+extends ../../layoutadmin
+block content_dashboard
+    .page-titles
+        .row
+            .col-lg-6.offset-3
+                .card
+                    h2(style='text-align: center;padding: 20px') Change Date for ICO
+                    .card
+                        .card-body
+                            .form-validation
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='val-preico-start-date')
+                                            | PreICO start date
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#val-preico-start-date.form-control(type='datetime-local', name='val-preico-start-date', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}",required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='val-preico-end-date')
+                                            | PreICO end date  
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#val-preico-end-date.form-control(type='datetime-local', name='val-preico-end-date', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}", required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='ico-start-date')
+                                            | ICO start date 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#ico-start-date.form-control(type='datetime-local', name='ico-start-date', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}", required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='ico-end-round1')
+                                            | ICO end (round 1) 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#ico-end-round1.form-control(type='datetime-local', name='ico-end-round1', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}", required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='ico-end-round2')
+                                            | ICO end (round 2) 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#ico-end-round2.form-control(type='datetime-local', name='ico-end-round2', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}", required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='ico-end-round3')
+                                            | ICO end (round 3) 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#ico-end-round3.form-control(type='datetime-local', name='ico-end-round3', min="2018-06-01T00:00", max="2019-06-30T00:00", pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}", required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='val-confirm-password')
+                                            | Password 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#val-confirm-password.form-control(type='password', name='val-confirm-password', placeholder='password to confirm it!',required)
+                                    .form-group.row
+                                        label.col-lg-4.col-form-label(for='val-confirm-private')
+                                            | Private Key to confirm 
+                                            span.text-danger *
+                                        .col-lg-6
+                                            input#val-confirm-private.form-control(type='password', name='val-confirm-private', placeholder='private key to confirm it!',required)
+                                    .form-group.row
+                                        .col-lg-8.ml-auto
+                                            button.btn.btn-primary(type='submit', onclick="confirmChangeDateIco()") Submit
+    script(src='/javascript/admin/changedate_ico.js')

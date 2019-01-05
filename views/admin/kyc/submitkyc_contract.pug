@@ -1,0 +1,66 @@
+extends ../../layoutadmin
+block content_dashboard
+    .row
+        .col-12
+            .card
+                .card-body
+                    .form-group.row
+                        label.col-lg-2.col-form-label(for='val-username')
+                            h4.card-title All User Kyc
+                    input(type='hidden',style='display:none',id='list_confirm')
+                    input(type='hidden',style='display:none',id='length_list_confirm')
+                    center
+                        img#loading-list-kyc(src='/images/loading.gif',height='40',width='40',name='loading')
+                    .table-responsive.table-list-kyc
+                        table#example23.display.nowrap.table.table-hover.table-striped.table-bordered(cellspacing='0', width='100%')
+                            thead
+                                tr
+                                    th #
+                                    th UserName
+                                    th Phone
+                                    th Status
+                                    th National
+                                    th Date KYC
+                                    th Action
+                            tbody
+                    .form-group.row
+                        input.table-list-kyc.btn.btn-primary.divcenter(type='submit', value='Submit',onclick='beginsubmit();')
+                    
+                
+    .row
+        .col-12
+            .card
+                .card-body
+                    .form-group.row
+                        label.col-lg-2.col-form-label(for='val-username')
+                            h4.card-title List KYC transaction
+                    input(type='hidden',style='display:none',id='list_kyc_trans')
+                    center
+                        img#loading-list-kyc-trans(src='/images/loading.gif',height='40',width='40',name='loading')
+                    .table-responsive
+                        table#table-list-kyc-trans.display.nowrap.table.table-hover.table-striped.table-bordered(cellspacing='0', width='100%')
+                            thead
+                                tr
+                                    th #
+                                    th Txs
+                                    th Fee
+                                    th Amount request
+                                    th Status
+                                    th Input
+                                    th by Admin 
+                            tbody
+                    
+                                  
+    // dataTables
+    script(src='/javascript/admin/list_submit_kyc.js')
+    script(src='/assets/plugins/datatables/datatables.min.js')
+    script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')
+    script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js')
+    script(src='/assets/plugins/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js')
+    script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js')
+    script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js')
+    script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js')
+    script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js')
+
+  
+ 

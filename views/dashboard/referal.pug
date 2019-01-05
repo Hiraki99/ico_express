@@ -1,0 +1,114 @@
+extends ../layout_dashboard
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/magnific/magnific-popup.css')
+    link(href='/main/scss/mycss/timeline-referal.css', rel='stylesheet')
+    .page-titles
+        .row
+            .col-lg-12(style='margin:20px')
+                p
+                    | Do you want to earn extra free tokens for inviting other users to our ICO? Start now and earn 5% of the amount invested by your friends. And it's not all: more bonuses are waiting for you. Check all the details on our article, 
+                    a(href='#') HERE
+                p
+                    | INVITED USERS WILL BE PASSED THROUGH ANTISCAM DETECTION. FAKE USERS, SAME USERS WITH MULTIPLE ACCOUNTS AND ANY OTHER NON REAL TYPE OF REFERRAL WILL RESULT IN ACCOUNT SUSPENSION.
+                p Referral link you need to share in order to benefit from our program
+        .row
+            if(isKYCed)
+                .input-group#link-referal-1(style='margin: 0 20px;cursor: pointer;')
+                    input#link_referal.form-control.border-input.text-muted(data-clipboard-target='#link',value=referal, readonly='',onclick='copyClipboard()')
+                    span.input-group-addon.link_copy
+                        img(src='/assets/icon/qr.png', style='margin-top:1px' height='40',width='40',type='button', data-toggle='modal',onclick="myfunction(this)")
+            else
+                .input-group#link-referal-2(style='margin: 0 20px;cursor: pointer;')
+                    center
+                        span(style='font-size:14px;margin:15px') You need KYC to get link referal. Click 
+                            a(style='color:green',href='/dashboard/kyc' ) HERE 
+                            span to KYC
+            
+            .col-lg-12(style='margin-top: 50px;margin-bottom: 50px')
+                center
+                    span(style='font-size:40px') Referal 
+                        img(src="/assets/icon/user.png",height='20',width='20',style='margin-top:7px', alt="")
+                        span(style='font-size:20px')  #{amount_member}
+                            
+                hr
+        .row
+            .col-lg-12
+                .timeline
+                    .container.left
+                        .content
+                            h2 2017
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                    .container.right
+                        .content
+                            h2 2016
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                    .container.left
+                        .content
+                            h2 2015
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                    .container.right
+                        .content
+                            h2 2012
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                    .container.left
+                        .content
+                            h2 2011
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                    .container.right
+                        .content
+                            h2 2007
+                            p
+                                | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+    script.
+        function copyClipboard() {
+            /* Get the text field */
+            var copyText = document.getElementById("link_referal");
+            /* Select the text field */
+            copyText.select();
+            document.execCommand("Copy");
+        }
+        function myfunction(n){
+            //- var source;
+            //- if(e == 0){
+            //-       source = '<div class="modal-dialog"><div class="modal-content" ><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Unlock: '+$('#address_unlock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            //- }else source = '<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Lock: '+$('#address_lock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            var str = "https://chart.googleapis.com/chart?chs=166x166&chld=L|0&cht=qr&chl="+$('#link_referal').val();
+            console.log(str);
+            var strVar="";
+
+            strVar += "  <div class=\"col-lg-6 divcenter\">";
+            strVar += "<div class=\"alert address-form\">";
+            strVar +="<div style= 'border-bottom: 1px solid #e9ecef;'>"
+            strVar += " <button type=\"button\" class=\"close\" onclick='$.magnificPopup.instance.close()'>&times;<\/button>";
+            strVar += "   <center><h4 class=\"alert-heading\">Address wallet<\/h4>";
+            strVar += "   <p style='font-size:12px'>"+$('#link_referal').val()+"<\/p></center>";
+            
+            strVar +="</div>"
+            strVar += "        <div class=\"address-form\">";
+            strVar += "          <div class=\"form-valide\">";
+            strVar += "            <div class=\"form-group row \" style='margin-top:10px'>";
+            strVar += "                 <img class='divcenter qr-phone' src=\'"+str+"\' alt=\'"+str+"\')><\/img>";
+            strVar += "            <\/div>";
+            strVar += "          <\/div>";
+            strVar += "        <\/div>";
+            strVar += "      <\/div>";
+            strVar += "    <\/div>";
+            strVar += "  <\/div>";
+            
+
+            $.magnificPopup.open({
+                delegate:'button',
+                items: {
+                    src: strVar,
+                    type: 'inline',
+                }, showCloseBtn: false,
+                
+            });
+        
+        }
+        

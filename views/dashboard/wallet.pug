@@ -1,0 +1,119 @@
+extends ../layout_dashboard
+block content_dashboard
+    #interface-wallet-1.row(style='display:none')
+        .col-lg-12
+            .card
+                .card-body
+                    .form-validation
+                        .cta-txt
+                            p
+                                span(translate-once='low_account_security') You haven't address wallet.
+                                
+                                span(translate-once='two_factor_disabled_text')
+                                    |  Please add your address wallet
+                        .form-group
+                            button#add_address.btn.btn-primary.btn-flat(type='submit') Add address wallet
+    input#qr_code(val='',type='text',style='display:none')
+    .row#interface-wallet-2(style="display:none")
+        div(style='margin:15px')
+            .card
+                .card-body
+                    // Nav tabs
+                    ul.nav.nav-tabs(role='tablist')
+                        li.nav-item#tab-uni
+                            a.nav-link.active(data-toggle='tab', href='#uni-infor', role='tab')
+                                span.hidden-sm-up
+                                    i.ti-home
+                                span.hidden-xs-down UNI Tokens
+                        li.nav-item#tab-eth
+                            a.nav-link(data-toggle='tab', href='#eth-infor', role='tab')
+                                span.hidden-sm-up
+                                    i.ti-user
+                                span.hidden-xs-down Ethereum
+                    // Tab panes
+                    .tab-content.tabcontent-border
+                        #uni-infor.tab-pane(role='tabpanel',style='display:block')
+                            div
+                                .row(style='margin-top: 20px;margin-bottom: 20px;')
+                                    .col-lg-6
+                                        .row
+                                            .col-2
+                                                img(src='/assets/images/logo.png',style='margin-left:50%')
+                                            .col-10
+                                                h5.text-muted.address-wallet 
+                                                h5.text-muted Balance 
+                                    .col-lg-6.text-right.button-responsive
+                                        button.btn.btn-flat.btn-primary(type='button',onclick='deposit();',data-effect="mfp-newspaper") Deposit
+                                    
+                                .row#balance-uni
+                                   
+                                .row.wallet-transaction
+                                    .col-12
+                                        .card
+                                            .card-body
+                                                h4.card-title Transaction of UNI Tokens (10 lastest transactions)
+                                                .table-responsive
+                                                    table.table.table-de.mb-0
+                                                        thead
+                                                            tr
+                                                                th(width='5%') #
+                                                                th Transaction ID
+                                                                th Date
+                                                                th Type
+                                                                th Status
+                                                                th Amount
+                                                        tbody#list-tran-uni
+                                                            tr
+                                                                td(colspan="6")
+                                                                    center  
+                                                                        img.loading(src='/images/loading.gif',name='loading',id='loading-list-tran-uni')
+                                                                
+                                                           
+                        #eth-infor.tab-pane(role='tabpanel')
+                            .row(style='margin-top: 20px;margin-bottom: 20px;')
+                                .col-lg-6
+                                    .row
+                                        .col-2
+                                            img(src='/assets/images/logo.png',style='margin-left:50%')
+                                        .col-10
+                                            h5.text-muted.address-wallet  
+                                            h5.text-muted Balance 
+                                .col-lg-6.text-right.button-responsive
+                                    button.btn.btn-flat.btn-primary(type='button',onclick='deposit();',data-effect="mfp-newspaper") Deposit
+                            .row
+                                .col-lg-12#balance-eth
+                            .row.wallet-transaction
+                                    .col-12
+                                        .card
+                                            .card-body
+                                                h4.card-title Transactions of ETH (10 lastest transactions)
+                                                .table-responsive
+                                                    table.table.table-de.mb-0
+                                                        thead
+                                                            tr
+                                                                th(width='5%') #
+                                                                th Transaction ID
+                                                                th Date
+                                                                th Type
+                                                                th Status
+                                                                th Amount
+                                                        tbody#list-tran-eth
+                                                            tr
+                                                                td(colspan="6")
+                                                                    center  
+                                                                        img.loading(src='/images/loading.gif',name='loading',id='loading-list-tran-eth')
+                                     
+                                
+    script(type='text/javascript').
+        $(document).ready(function(){
+            $("#tab-uni").click(function(){
+                $("#uni-infor").show();
+                $("#eth-infor").hide();
+            });
+            $("#tab-eth").click(function(){
+                $("#uni-infor").hide();
+                $("#eth-infor").show();
+            });
+        });
+
+    script(src='/javascript/dashboard/wallet.js')

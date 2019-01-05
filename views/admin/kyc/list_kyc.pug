@@ -1,0 +1,39 @@
+extends ../../layoutadmin
+block content_dashboard
+  .row
+    .col-12
+      .card
+        .card-body
+          .form-group.row
+            label.col-lg-2.col-form-label(for='val-username')
+                h4.card-title All User Kyc
+          .form-group.row
+            input.btn.btn-primary.divcenter(type='submit', value='Check User Kyc Random',onclick='checkrandom();')
+          .table-responsive
+            table#example23.display.nowrap.table.table-hover.table-striped.table-bordered(cellspacing='0', width='100%')
+              thead
+                tr
+                  th STT
+                  th UserName
+                  th Phone
+                  th Status
+                  th National
+                  th Date KYC
+                  th Action
+              tbody
+                
+                
+  // dataTables
+  script(src='/javascript/admin/list_kyc.js')
+  script(src='/assets/plugins/datatables/datatables.min.js')
+  //- script(src='assets/plugins/datatables/datatables-init.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js')
+  script(src='/assets/plugins/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js')
+  script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js')
+  script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js')
+
+  
+ 

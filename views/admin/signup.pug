@@ -1,0 +1,26 @@
+extends ../layoutadmin
+block content_dashboard
+    .row.justify-content-center
+        .col-lg-6
+            .login-content.card
+                .login-form
+                    h4 Register
+                    form
+                        .form-group
+                            label User Name
+                            input.form-control(type='email', placeholder='User Name')
+                        .form-group
+                            label Email address
+                            input.form-control(type='email', placeholder='Email')
+                        .form-group
+                            label Password
+                            input.form-control(type='password', placeholder='Password')
+                        .form-group
+                            label Phone Number
+                            input.form-control(type='Phone', placeholder='+841659685663')
+    
+                        button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type='submit') Register
+                        .register-link.m-t-15.text-center
+                            p
+                                | Already have account ? 
+                                a(href='/login')  Sign in

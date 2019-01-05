@@ -1,0 +1,106 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    
+    link(href='/css/bootstrap_datepicker/bootstrap-datetimepicker.css', rel='stylesheet', media='screen')
+    
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    .form-group
+        .row
+            .col-12
+                .card
+                    if(data ==null)
+                        form#formevent.card-body(action='/admin/addevent',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Event Name:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='eventname', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Event Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='eventdescription', value='')
+
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Amount:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='amount', value='')
+                            
+                            label.col-lg-2.col-form-label(for='val-username')(style='margin:2vh 0px;')
+                                | Event Start 
+                            .col-lg-12
+                                .input-group.date.form_datetime.col-md-12(data-date='', data-date-format='dd MM yyyy HH:ii p', data-link-field='dtp_input1')
+                                    input.form-control(size='16', type='text', value='',name='eventstart')
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-th
+                            label.col-lg-2.col-form-label(for='val-username')(style='margin:2vh 0px;')
+                                | Event End
+                            .col-lg-12
+                                .input-group.date.form_datetime.col-md-12(data-date='', data-date-format='dd MM yyyy HH:ii p', data-link-field='dtp_input1')
+                                    input.form-control(size='16', type='text', value='', name='eventend')
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-th
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:1vh 1vw;font-size:20px;") Submit
+                    else
+                        form#formevent.card-body(action='/admin/modifyevent',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            input(style='display:none',name='eventid',value=data.id)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Event Name:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='eventname', value=data.title)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Event Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='eventdescription', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Amount:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='amount', value=data.amount)
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Status Video:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val_identification.form-control(name='val_status')
+                                    option(value='enable',selected =(data.status == 'enable') ) Enable
+                                    option(value='disable',selected =(data.status == 'disable')) Disable
+                            
+                            label.col-lg-2.col-form-label(for='val-username')(style='margin:2vh 0px;')
+                                | Event Start 
+                            
+                            .col-lg-12
+                                .col-lg-10.input-group.date.form_datetime.col-md-12(data-date='', data-date-format='dd MM yyyy HH:ii p', data-link-field='dtp_input1')
+                                    input.form-control(size='16', type='text', value='',name='eventstart')
+                                .col-lg-102    
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-th
+                            label.col-lg-2.col-form-label(for='val-username')(style='margin:2vh 0px;')
+                                | Event End
+                        
+                            .col-lg-12
+                                .col-lg-10.input-group.date.form_datetime.col-md-12(data-date='', data-date-format='dd MM yyyy HH:ii p', data-link-field='dtp_input1')
+                                    input.form-control(size='16', type='text', value=data.event_end, name='eventend')
+                                .col-lg-10    
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-th
+                            
+                            
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:1vh 1vw;font-size:20px;") Update
+        
+    //- script(type='text/javascript', src='/js/jquery-1.8.3.min.js', charset='UTF-8')
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/bootstrap-datetimepicker.js', charset='UTF-8')
+
+    script(type='text/javascript').
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+            });
+
+    

@@ -1,0 +1,39 @@
+extends ../../layoutadmin
+block content_dashboard
+  .row
+    .col-12
+      .card
+        .card-body
+          .form-group.row
+            label.col-lg-2.col-form-label(for='val-username')
+                h4.card-title All Video
+            .col-lg-5(style='left:54vw')
+              a.btn.btn-lg.btn-success(href='/admin/newvideo')
+                i.fa.fa-plus
+                |  New Video
+          
+          .table-responsive
+            table#example23.display.nowrap.table.table-hover.table-striped.table-bordered(cellspacing='0', width='100%')
+              thead
+                tr
+                  th STT
+                  th Video Title
+                  th Video Link
+                  th Status
+                  th Date Added
+                  th Action
+              tbody
+
+  link(rel='stylesheet', href='/assets/css/form.css')
+  link(rel='stylesheet', href='/assets/plugins/magnific/magnific-popup.css')
+  script(src='/assets/plugins/magnific/jquery.magnific-popup.js')   
+  script(src='/javascript/admin/video.js')  
+  script(src='/assets/plugins/datatables/datatables.min.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js')
+  script(src='/assets/plugins/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js')
+  script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js')
+  script(src='/assets/plugins/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js')
+  script(src='/assets/plugins/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js')
+ 

@@ -1,0 +1,164 @@
+extends ../layout_dashboard
+block content_dashboard
+    - src_qrcode = "https://chart.googleapis.com/chart?chs=300x300&chf=bg,s,FFFFFF00&cht=qr&choe=UTF-8&&chl=bitcoin:"+data.address_contract_locked
+    - src_qrcode_unlock = "https://chart.googleapis.com/chart?chs=300x300&chf=bg,s,FFFFFF00&cht=qr&choe=UTF-8&&chl=bitcoin:"+data.address_contract_unlocked
+    link(rel='stylesheet', href='/assets/css/form.css')
+    link(rel='stylesheet', href='/assets/plugins/magnific/magnific-popup.css')
+    .page-titles
+        .row
+            .col-lg-6
+                h2(style='padding: 20px')
+                    center Buy UNI Tokens Locked
+                p.docdetail
+                    | UNI locked tokens will be locked for 12 months and unlocked about 1/12 for every month. UNI tokens locked will be not transfered until it was unlocked. But you can buy UNI tokens with that price's is very cheap
+                
+                
+                
+            .col-lg-6
+                h2(style='padding: 20px')
+                    center Buy UNI Tokens Unlocked
+                p.docdetail
+                    | UNI unlocked tokens will be transfered after ico ended. But you must buy UNI tokens with that price's is more expensive
+        .row
+            br
+            .col-lg-12
+                h1(style='padding: 50px 0')
+                    center Bonus Details
+        .row
+            .col-10.offset-1
+                span.text-muted(style='padding:5px 0px;font-size: 13px') PreICO: 10 
+        .row
+            .col-10.offset-1
+                .card
+                    .card-body
+                        h4.card-title Price
+                        .table-responsive
+                            table.table.table-de.mb-0
+                                thead
+                                    tr
+                                        th(width='25%') Round
+                                        th(width='25%') UNI locked
+                                        th(width='25%') UNI unlocked
+                                        th(width='25%') Time
+                                tbody
+                                    tr
+                                        td PreIco
+                                        td 1923.08 UNI/ETH
+                                        td 1515.15 UNI/ETH
+                                        td 04/01/2018 - 04/16/2018
+                                    tr
+                                        td ICO round 1
+                                        td 1219.51 UNI/ETH
+                                        td 1111.11 UNI/ETH
+                                        td 04/26/2018 - 04/27/2018
+                                    tr
+                                        td ICO round 2
+                                        td 1219.51 UNI/ETH
+                                        td 1111.11 UNI/ETH
+                                        td 04/28/2018 - 05/10/2018
+                                    tr
+                                        td ICO round 3
+                                        td 1219.51 UNI/ETH
+                                        td 1111.11 UNI/ETH
+                                        td 05/11/2018 - 05/26/2018
+            .col-10.offset-1
+                .card
+                    .card-body
+                        h4.card-title Bonus
+                        .table-responsive
+                            table.table.table-de.mb-0
+                                thead
+                                    tr
+                                        th(width='35%') Amount of ETH (x)
+                                        th(width='35%') UNI locked
+                                        th(width='35%') UNI unlocked
+                                tbody
+                                    tr
+                                        td PreICO
+                                        td
+                                        td
+                                    tr
+                                        td 10 <= x < 100
+                                        td + 0%
+                                        td + 0%
+                                    tr
+                                        td 100 <= x < 200
+                                        td + 5%
+                                        td + 2%
+                                    tr
+                                        td 200 <= x < 1000
+                                        td + 10%
+                                        td + 5%
+                                    tr
+                                        td ICO (Round 1 / Round 2 / Round 3)
+                                        td (20% / 15% / 10%)
+                                        td (15% / 10% / 0%)
+                                    tr
+                                        td 0.1 <= x < 10
+                                        td + 0%
+                                        td + 0%
+                                    tr
+                                        td 10 < x < 50
+                                        td + 5%
+                                        td + 5%
+                                    tr
+                                        td 50 < x < 100
+                                        td + 10%
+                                        td + 5%
+        
+    script(src='/assets/plugins/magnific/jquery.magnific-popup.js')
+    script.
+        function copyClipboard(cmd) {
+            var copyText;
+            if(cmd == 0){
+                copyText = document.getElementById("address_unlock");
+            }else copyText = document.getElementById("address_lock");
+            copyText.select();
+            document.execCommand("Copy");
+        }
+        function myfunction(n,e){
+            //- var source;
+            //- if(e == 0){
+            //-       source = '<div class="modal-dialog"><div class="modal-content" ><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Unlock: '+$('#address_unlock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            //- }else source = '<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Lock: '+$('#address_lock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            
+            var strVar="";
+
+            strVar += "  <div class=\"col-lg-4 divcenter\">";
+            strVar += "<div class=\"alert address-form\">";
+            strVar +="<div style= 'border-bottom: 1px solid #e9ecef;'>"
+            strVar += " <button type=\"button\" class=\"close\" onclick='$.magnificPopup.instance.close()'>&times;<\/button>";
+            if(e == 0){
+                strVar += "   <center><h4 class=\"alert-heading\">Address wallet unlock!<\/h4>";
+                strVar += "   <p>Address: "+$('#address_unlock').val()+"<\/p></center>";
+            }else{
+                strVar += "   <center><h4 class=\"alert-heading\">Address wallet lock!<\/h4>";
+                strVar += "   <p>Address: "+$('#address_lock').val()+"<\/p></center>";
+            }
+            
+            
+            strVar +="</div>"
+            strVar += "        <div class=\"address-form\">";
+            strVar += "          <div class=\"form-valide\">";
+            strVar += "            <div class=\"form-group row \">";
+            strVar += "                 <img class='divcenter qr-phone' src="+$(n).data("qr_code")+" alt="+$(n).data("qr_code")+"><\/img>";
+            strVar += "            <\/div>";
+            strVar += "          <\/div>";
+            strVar += "        <\/div>";
+            strVar += "      <\/div>";
+            strVar += "    <\/div>";
+            strVar += "  <\/div>";
+            
+
+            $.magnificPopup.open({
+                delegate:'button',
+                items: {
+                    src: strVar,
+                    type: 'inline',
+                }, showCloseBtn: false,
+                
+            });
+        
+        }
+        
+        

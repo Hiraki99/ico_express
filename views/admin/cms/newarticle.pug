@@ -1,0 +1,171 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    .form-group
+            .row
+                .col-12
+                    .card
+                    if (!data)
+                        form#post_news.card-body(action='/admin/addnews',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Article Title:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#article_title.form-control(type='text', name='article_title', value='')
+                            input.form-control(type='text', name='id_news', value='',style='display:none')
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(for='val-category',style='margin:2vh 0px;')
+                                | Category
+                                span.text-danger *
+                            
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val-category.form-control(name='val_category')
+                                    option(value='None') Select Category
+                                    each val in category
+                                        option(value=val.DISTINCT) #{val.DISTINCT}
+                            a.btn.btn-primary.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style="font-size:20px;margin-left: 15px;margin-top: 10px;",onclick='addcategory();') Add New Category
+                            br     
+                                    
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Short Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#short_title.form-control(type='text', name='short_description', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Image For Post:
+                            input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                    div(ref='uploadForm')
+                                        img#image_front
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                h4.card-title Content New
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                textarea#content_news.textarea_editor.form-control(rows='15', placeholder='Enter text ...', style='height:450px',name = 'content_news')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='', data-original-title='') Meta Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#meta_description.form-control(type='text', name='meta_description', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='', ) Meta keyword:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#meta_keyword.form-control(type='text', name='meta_keyword', value='')
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Submit
+                    else
+                        form#post_news.card-body(action='/admin/changenews',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Article Title:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#article_title.form-control(type='text', name='article_title', value=data.title)
+                            input.form-control(type='text', name='id_news', value=data.id,style='display:none')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Short Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#short_title.form-control(type='text', name='short_description', value=data.description)
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(for='val-category',,style='margin:2vh 0px;')
+                                | Category
+                                span.text-danger *
+                        
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val-category.form-control(name='val_category')
+                                    option(value='None') Select Category
+                                    each val in category
+                                        option(value=val.DISTINCT,selected =(data.category == val.DISTINCT)) #{val.DISTINCT}
+                            a.btn.btn-primary.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style="font-size:20px;margin-left: 15px;margin-top: 10px;",onclick='addcategory();') Add New Category
+                            br 
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Status News:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val_identification.form-control(name='val_status')
+                                    option(value='enable',selected =(data.status == 'enable') ) Enable
+                                    option(value='disable',selected =(data.status == 'disable')) Disable
+    
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Image For Post:
+                            input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                    div(ref='uploadForm')
+                                        img#image_front(src='/image_news/'+data.url_image)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                h4.card-title Content News
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                textarea#content_news.textarea_editor.form-control(rows='15', placeholder='Enter text ...', style='height:450px',name = 'content_news',data-content=data.content)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='', data-original-title='') Meta Description:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#meta_description.form-control(type='text', name='meta_description', value=data.meta_description)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='', ) Meta keyword:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input#meta_keyword.form-control(type='text', name='meta_keyword', value=data.keyword)
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Update
+
+    // Sidebar
+    script(src='/assets/plugins/wysihtml5/js/wysihtml5-0.3.0.js')
+    script(src='/assets/plugins/wysihtml5/js/bootstrap-wysihtml5.js')
+    script(src='/assets/plugins/wysihtml5/js/wysihtml5-init.js')
+
+    script.
+        document.getElementById("file_image").onchange = function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image_front").src = e.target.result;
+        };
+        reader.readAsDataURL(this.files[0]);
+        };
+        function addcategory(){
+            var strVar="";
+
+            strVar += "<div class=\"col-xs-4 col-lg-4 form-pad divcenter\">";
+            
+            strVar += "<center><img class='loading' src='/images/loading.gif' style='display:none'></center>"
+                
+            strVar += "<div class=\"alert address-form mfp-newspaper\">";
+            strVar +="<div style= 'border-bottom: 1px solid #e9ecef;'>"
+            strVar += " <button type=\"button\" class=\"close\" onclick='$.magnificPopup.instance.close()'>&times;<\/button>";
+            strVar += "   <center><h4 class=\"alert-heading\"> Add New Category!<\/h4>";
+            strVar += "   <p>Note*:Add New Category for News.<\/p></center>";
+            strVar +='<\/div>'
+            strVar += "        <div class=\"address-form\">";
+            strVar += "          <div class=\"form-valide\">";
+            strVar += "            <div class=\"form-group row\">";
+            strVar += "              <label class=\"col-xs-3 col-lg-3 col-form-label\" for=\"val-add-address\">Address<\/label>";
+            strVar += "              <div class=\"col-xs-9 col-lg-9 col-pad\">";
+            strVar += "                <input class=\"form-control\" id=\"val-add-category\" type=\"text\" name=\"category\" placeholder=\"Please enter private key of address wallet..\"\/>";
+            strVar += "              <\/div>";
+            strVar += "            <\/div>";
+            strVar += "            <div class=\"form-group\">";
+            strVar += "              <div class=\"col-lg-8 divcenter\">";
+            strVar += "                <button class=\"btn btn-primary button-res\" type=\"submit\" onclick='addnewcategory()'>Submit<\/button>";
+            strVar += "                <button class=\"btn btn-primary\" onclick='$.magnificPopup.instance.close()'>Close<\/button>";
+            strVar += "              <\/div>";
+            strVar += "            <\/div>";
+            strVar += "          <\/div>";
+            strVar += "        <\/div>";
+            strVar += "      <\/div>";
+            strVar += "    <\/div>";
+            strVar += "  <\/div>";
+
+            $.magnificPopup.open({
+                items: {
+                    src: strVar,
+                    type: 'inline',
+                    removalDelay: 500,
+                    
+                },showCloseBtn: false, closeOnBgClick: false
+            });
+        }
+        function addnewcategory(){
+            $('#val-category').append($('<option>', { 
+                value: $("#val-add-category").val(),
+                text : $("#val-add-category").val(),
+                selected: true
+            }));
+            $.magnificPopup.instance.close();
+        }
+
+    

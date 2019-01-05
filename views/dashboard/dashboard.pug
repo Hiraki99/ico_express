@@ -1,0 +1,140 @@
+extends ../layout_dashboard
+block content_dashboard
+    link(href='/main/scss/mycss/progress-cycle.css', rel='stylesheet')
+    .row
+        .col-lg-9.dashbig-pad
+            .row
+                .col-lg-6
+                    center
+                        img.loading(src='/images/loading.gif',id='loadingbtc')
+                    .card#btc(style='display:none')
+                        .card-body
+                            .stat-widget-seven
+                                .row
+                                    .col-2
+                                        i.cc.BTC(title='BTC')
+                                    .col-6
+                                        h3 UniBotCash UNI
+                                        h6.text-muted
+                                            |  
+                                            span.color-gray BTC
+                                            span.text-info 
+                                    .col-4.text-right
+                                        h3#price_btc 0
+                                        h6.text-success
+                                            |  
+                                            i.ti-arrow-up.f-s-16.text-success.m-l-5
+                                .m-t-15
+                                    span#chart_btc.peity-btc(data-peity='{ "fill": "rgba(247,147,26,0.3)", "stroke": "#f7931a"}') 6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1
+                .col-lg-6
+                    center
+                        img.loading(src='/images/loading.gif',id='loadingeth')
+                    .card#eth(style='display:none')
+                        .card-body
+                            .stat-widget-seven
+                                .row
+                                    .col-2
+                                        i.cc.NEO(title='NEO')
+                                    .col-6
+                                        h3 Ethereum ETH
+                                        h6.text-muted
+                                            | 
+                                            span.color-gray BTC
+                                            span.text-info 
+                                    .col-4.text-right
+                                        h3#price_eth 0
+                                        h6.text-warning
+                                            |  
+                                            i.ti-arrow-up.f-s-16.text-warning.m-l-5
+                                .m-t-15
+                                    span#chart_eth.peity-eth(data-peity='{ "fill": "rgba(88,191,0,0.3)", "stroke": "#58bf00"}') 6782.75,6799.3,888.6,4,3,8,1,8888,8542,5,9,2,8,1,4,8,9,8,2,9582
+            // portfolio
+            .row
+                .col-12.col-xl-6
+                    .card
+                        .card-body
+                            h4.card-title Portfolio
+                            center
+                                img.loading(src='/images/loading.gif',name='loading',id='loading-portfolio')
+                            .table-responsive
+                                table.table.table-de.mb-0
+                                    thead
+                                    tbody#portfolio
+                                        
+                .col-12.col-xl-6.transaction
+                    .card
+                        .card-body
+                            h4.card-title Buy token of transactions 
+                            center
+                                img.loading(src='/images/loading.gif',name='loading',id='loading-transaction')
+                            .table-responsive
+                                table.table.table-de.mb-0
+                                    thead
+                                    tbody#list-transaction
+                                        
+            // end portfolio
+        .col-lg-3.dashsmall-pad
+            // progress cycle start
+            .row.page-titles
+                .col-lg-12
+                    h4
+                        center UNI Tokens
+                .progress.blue#time-cycle
+                    span.progress-left
+                        span.progress-bar
+                    span.progress-right
+                        span.progress-bar
+                    .progress-value 
+                .col-lg-12(style='margin-top: 20px')
+                    h5
+                        center Current selling status
+            // progress cycle end
+            // Bonus start
+            
+            .row.page-titles
+                .col-4
+                    img(src='assets/images/logo.png')
+                .col-8.text-right#bonus
+                    center
+                        img.loading(src='/images/loading.gif',name='loading',id='loading-bonus')
+            // bonus end
+            // Tokens start
+            .row.page-titles
+                .col-4
+                    img(src='assets/images/logo.png')
+                .col-8.text-right
+                    h4.card-title Tokens
+                    center
+                        img.loading(src='/images/loading.gif',name='loading',id='loading-tokens')
+                .col-12#tokens
+                    
+            // Tokens end
+            // countdown start
+            .row.page-titles(style='display:none')
+                .col-4
+                    img(src='assets/images/logo.png')
+                .col-8.text-right
+                    h4.card-title Countdown
+                .col-12
+                    .countdown-box.text-center.animated(data-animate='fadeInUp', data-delay='.3')
+                        .token-countdown.d-flex.align-content-stretch(data-date='2018/09/05')
+            // countdown end
+            // referal start
+            .row.page-titles
+                .col-4
+                    img(src='assets/images/logo.png')
+                .col-8.text-right#referals1
+                    center
+                        img.loading(src='/images/loading.gif',name='loading',id='loading-referal1')
+                .col-12.text-right#referals2
+                    //- center
+                    //-     img.loading(src='/images/loading.gif',name='loading',id='loading-referal2')
+            // referal end
+    //- script(src='/js/lib/jquery-3.1.1.min.js') 
+    script(src='/javascript/dashboard/dashboard.js')
+    script(src='https://www.amcharts.com/lib/3/amcharts.js')
+    script(src='/assets/plugins/amchart/serial.js')
+    script(src='/assets/plugins/amchart/light.js')
+    
+    //- script(src='assets/plugins/amchart/amstock.js')
+    //- script(src='assets/plugins/amchart/dashboard1-amchart-init.js')

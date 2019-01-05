@@ -1,0 +1,160 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8',name='csrf-token', content=_csrf)
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title ICO Admin
+        // Favicon icon
+        link(rel='shortcut icon', href='/images/favicon.png')
+        link(href='/css/style.css', rel='stylesheet')   
+
+    body
+        #icoAdmin.icoAdmin
+            .icoAdmin-overlay-box
+            .icoAdmin-container
+                header.icoAdmin-header
+                    .icoAdmin-wrapper
+                        .icoAdmin-left-header
+                            .icoAdmin-logo
+                                a(href='/')
+                                    span.logo-icon
+                                        i.cc.BTC
+                                    span.logo-text
+                                        | ICO Admin
+                                        span.hide-in-smallsize
+                        - if(!login) style_login = 'display:none'
+                        - else style_login = ''; 
+                        .icoAdmin-right-header(style=style_login)
+                            .sidebar_toggle
+                                a(href='javascript:void(0)')
+                                    i.icon-menu
+                          
+                            .icoAdmin-rr-header
+                              
+                                li.icons
+                                  a(href='javascript:void(0)')
+                                    i.fa.fa-user(aria-hidden='true')
+                                    span(style='margin-left:10px;margin-top:5px') #{session.admin_name}
+                                  .drop-down.dropdown-profile
+                                    .dropdown-content-body
+                                      ul
+                                        li
+                                          a(href='/admin/changepassword')
+                                            i.ti-lock
+                                            span Change Password
+                                        li
+                                          a(href='/logout')
+                                            i.ti-power-off
+                                            span Logout
+                - if(!login) style_login = 'display:none'
+                - else style_login = '';  
+                .icoAdmin-main-container
+                    .icoAdmin-wrapper
+                        .nav.icoAdmin-navbar(style= style_login)
+                          .sidebar_toggle
+                            a(href='#')
+                              i.icon-close.icons
+                          .icoAdmin-inner-navbar
+                            .icoAdmin-search
+                              span.searchbar-toggle   
+                            
+                            .icoAdmin-navigatio-lavel #{session.admin_type}
+          
+                            ul#navadmin.icoAdmin-item.icoAdmin-left-item
+                              - if(type=='Manager' || type =='Root')
+                                li.icoAdmin-hasmenu(style= style_manager)
+                                  a(href='javascript:void(0)')
+                                    span.icoAdmin-micon
+                                      i.icon-note
+                                    span.icoAdmin-mtext Account Manager
+                                  ul.icoAdmin-submenu
+                                    li
+                                      a(href='/admin/new-account-admin')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Create new Account Sub-Admin
+                                    li
+                                      a(href='/admin/list-admin')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext List Account
+                              - if(type == 'Root')
+                                li.icoAdmin-hasmenu(style= style_root)
+                                  a(href='javascript:void(0)')
+                                    span.icoAdmin-micon
+                                      i.icon-note
+                                    span.icoAdmin-mtext Token Manager
+                                  ul.icoAdmin-submenu
+                                    li
+                                      a(href='/admin/date-ico')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Change Date ICO
+                                    li
+                                      a(href='/admin/bonus')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Send Bonus
+                            
+                              - if(type=='Manager' || type == 'Root')
+                                li.icoAdmin-hasmenu
+                                  a(href='javascript:void(0)')
+                                    span.icoAdmin-micon
+                                      i.icon-note
+                                    span.icoAdmin-mtext CMS
+                                  ul.icoAdmin-submenu
+                                    li
+                                      a(href='/admin/news')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext News
+                                    li
+                                      a(href='/admin/advisor')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Advisor
+                                    li
+                                      a(href='/admin/video')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Video
+                                    li
+                                      a(href='/admin/event')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Event
+                                li.icoAdmin-hasmenu(style=style_manager)
+                                  a(href='javascript:void(0)')
+                                    span.icoAdmin-micon
+                                      i.icon-note
+                                    span.icoAdmin-mtext Widget
+                                  ul.icoAdmin-submenu
+                                    li
+                                      a(href='/admin/notify')
+                                        span.icoAdmin-micon
+                                          i.icon-chart
+                                        span.icoAdmin-mtext Notification
+                                    - if(type == 'Root')
+                                      li
+                                        a(href='/admin/airdrop')
+                                          span.icoAdmin-micon
+                                            i.icon-chart
+                                          span.icoAdmin-mtext Airdrop
+                              li
+                                a(href='/admin/list-kyc')
+                                  span.icoAdmin-micon
+                                    i.icon-note
+                                  span.icoAdmin-mtext List User Kyc
+                              li
+                                a(href='/admin/list-kyc-verified')
+                                  span.icoAdmin-micon
+                                    i.icon-note
+                                  span.icoAdmin-mtext List User Kyc Pending to SC
+  
+                        .icoAdmin-content
+                            .icoAdmin-inner-content.container-fluid
+                                include partials/script_init
+                                block content_dashboard
+
+    

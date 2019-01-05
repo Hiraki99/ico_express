@@ -1,0 +1,30 @@
+extends ../layoutadmin
+block content_dashboard
+    //- script(src='/js/lib/jquery-3.1.1.min.js')
+    script(src='/js/md5.min.js')
+    script(src='https://www.google.com/recaptcha/api.js')
+    #form.row.justify-content-center
+        .col-lg-4
+            .login-content.card
+                .login-form
+                    h4 Admin Login
+                    div
+                        .form-group
+                            label Username
+                            input.form-control(id='username',type='username',required, placeholder='Username',name='username')
+                            
+                        .form-group
+                            label Password
+                            input.form-control(id='password',type='password',required, placeholder='Password',name='password')
+            
+                        #captra_sign_up.group
+                            label.label(for='pass')
+                            .g-recaptcha(data-sitekey='6Lc8pVMUAAAAAP2Oyt-pO17Dd2tvJ_9iJt0R8pcK')
+                            
+                        button#login_button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type='submit') Sign in
+                        span#error-signin-admin(style='color: red;display:none') Password is invalid
+    #loading.divcenter(style='display:none')
+        center
+            img.loading(src='/images/loading.gif')
+    script(src='/javascript/admin/admin.js')
+        

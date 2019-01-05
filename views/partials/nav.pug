@@ -1,0 +1,43 @@
+header.site-header.is-sticky
+    // Navbar
+    #mainnav.navbar.navbar-expand-lg.is-transparent
+        nav.container
+            a.navbar-brand.animated(data-animate='fadeInDown', data-delay='.65', href='./')
+                img.logo.logo-dark(alt='logo', src='images/logo.png', srcset='images/logo2x.png 2x')
+                img.logo.logo-light(alt='logo', src='images/logo_unibot.png', srcset='images/logo_unibot.png 2x')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggle')
+                span.navbar-toggler-icon
+                    span.ti.ti-align-justify
+            #navbarToggle.collapse.navbar-collapse.justify-content-end
+                ul.navbar-nav.animated.remove-animation(data-animate='fadeInDown', data-delay='.9')
+                    li.nav-item
+                        a.nav-link.menu-link(href='#intro')
+                            | What is ICO
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link.menu-link(href='#tokenSale') Token Sale
+                    li.nav-item
+                        a.nav-link.menu-link(href='#roadmap') Roadmap
+                    li.nav-item
+                        a.nav-link.menu-link(href='#team') Team
+                    li.nav-item
+                        a.nav-link.menu-link(href='#partners') Partners
+                    li.nav-item.dropdown
+                        a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') MORE
+                        .dropdown-menu
+                            a.dropdown-item.menu-link(href='#media-partner') Media Partners
+                            a.dropdown-item.menu-link(href='#blogs') Blogs
+                            a.dropdown-item.menu-link(href='#faq') Faqs
+                    li.nav-item
+                        a.nav-link.menu-link(href='#contact') Contact
+                ul.navbar-nav.navbar-btns.animated.remove-animation(data-animate='fadeInDown', data-delay='1.15')
+                    li.nav-item
+                        a.nav-link.btn.btn-sm.btn-outline.menu-link(href='#') Whitepaper
+                    li.nav-item
+                        if !user_name
+                            a#popup-login.nav-link.btn.btn-sm.btn-outline.menu-link(href='#test-modal') Log In
+                            //- a#popup-login.nav-link.btn.btn-sm.btn-outline.menu-link(onclick='openlogin();') Log In2
+                        else
+                            a.nav-link.btn.btn-sm.btn-outline.menu-link(href='/dashboard') #{user_name}
+    // End Navbar
+    // Banner/Slider

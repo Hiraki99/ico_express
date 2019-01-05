@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "thinh102",
+    "database": "dev2",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging":false
+  },
+  "test": {
+    "username": "thinh",
+    "password": "thinh102",
+    "database": "Dev3",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging":false
+  },
+  "production": {
+    "username": "thinh",
+    "password": "thinh102",
+    "database": "Dev2",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging":false
+  }
+}

@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="author" content="Softnio"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website."><!-- Fav Icon  -->
+	<link href="images/favicon.png" rel="shortcut icon" /><!-- Site Title  -->
+	<title>ICO Crypto - Bitcoin &amp; Cryptocurrency Landing Page Template</title>
+	<!-- Vendor Bundle CSS -->
+	<link href="assets/css/vendor.bundle.css" rel="stylesheet" /><!-- Custom styles for this template -->
+	<link href="assets/css/style.css?ver=113" rel="stylesheet" />
+	<link href="assets/css/theme.css?ver=113" rel="stylesheet" />
+</head>
+<body class="theme-dark is-smooth-effect" data-offset="80" data-spy="scroll" data-target="#mainnav"><!-- Header -->
+<header class="site-header is-sticky"><!-- Place Particle Js -->
+<div class="particles-container particles-js" id="particles-js"></div>
+<!-- Navbar -->
+
+<div class="navbar navbar-expand-lg is-transparent" id="mainnav">
+<nav class="container"><a class="navbar-brand animated" data-animate="fadeInDown" data-delay=".65" href="./"><img alt="logo" class="logo logo-dark" src="images/logo.png" srcset="images/logo2x.png 2x" /> <img alt="logo" class="logo logo-light" src="images/logo-white.png" srcset="images/logo-white2x.png 2x" /> </a><button class="navbar-toggler" data-target="#navbarToggle" data-toggle="collapse" type="button"></button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+<ul class="navbar-nav animated" data-animate="fadeInDown" data-delay=".9">
+	<li class="nav-item"><a class="nav-link menu-link" href="#intro">What is Uni<span class="sr-only">(current)</span></a></li>
+	<li class="nav-item"><a class="nav-link menu-link" href="#tokenSale">Token Sale</a></li>
+	<li class="nav-item"><a class="nav-link menu-link" href="#roadmap">Roadmap</a></li>
+	<li class="nav-item"><a class="nav-link menu-link" href="#team">Team</a></li>
+	<li class="nav-item"><a class="nav-link menu-link" href="#partners">Partners</a></li>
+	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">MORE</a>
+	<div class="dropdown-menu"><a class="dropdown-item menu-link" href="#media-partner">Media Partners</a> <a class="dropdown-item menu-link" href="#blogs">Blogs</a> <a class="dropdown-item menu-link" href="#faq">Faqs</a></div>
+	</li>
+	<li class="nav-item"><a class="nav-link menu-link" href="#contact">Contact</a></li>
+</ul>
+
+<ul class="navbar-nav navbar-btns animated" data-animate="fadeInDown" data-delay="1.15">
+	<li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="#">Whitepaper</a></li>
+	<li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="#apps">Try App</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- End Navbar --><!-- Banner/Slider -->
+
+<div class="banner banner-curb banner-particle d-flex align-items-center" id="header">
+<div class="container">
+<div class="banner-content">
+<div class="row align-items-center mobile-center">
+<div class="col-lg-6 col-md-12 order-lg-first">
+<div class="header-txt">
+<h1 class="animated" data-animate="fadeInUp" data-delay="1.55">Blockchain powered machine-learning chatbot&nbsp;technology</h1>
+
+<p class="lead color-secondary animated" data-animate="fadeInUp" data-delay="1.65">Blockchain technology allows verifying the reliability of the chatbot &amp; increasing the level of trust</p>
+
+<ul class="btns animated" data-animate="fadeInUp" data-delay="1.75">
+	<li><a class="btn" href="#">Sign up to Join</a></li>
+	<li><a class="btn btn-alt" href="#">TOKEN DISTRIBUTION</a></li>
+</ul>
+
+<ul class="social">
+	<li class="animated" data-animate="fadeInUp" data-delay="1.85"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay="1.9"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay="1.95"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay="2"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay="2.05"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay="2.15"></li>
+</ul>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg-6 col-md-12 order-first">
+<div class="header-image animated" data-animate="fadeInRight" data-delay="1.25"><img alt="header" src="images/header-image-dark.png" /> <img alt="header-icon" class="header-image-icon left-icon" src="images/header-icon-a.png" /> <img alt="header-icon" class="header-image-icon right-icon" src="images/header-icon-b.png" /></div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .banner-content  --></div>
+<!-- .container  --></div>
+<!-- End Banner/Slider --></header>
+<!-- End Header --><!-- Start Section -->
+
+<div class="section section-pad section-bg-blend nopb" id="intro">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-5 offset-md-1">
+<div class="res-m-btm animated" data-animate="fadeInUp" data-delay=".1"><img alt="graph" src="images/graph-dark-a.png" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6 order-md-first order-last">
+<div class="text-block">
+<h2 class="animated" data-animate="fadeInUp" data-delay="0">The next generation of advanced trustful solution</h2>
+
+<p class="lead animated" data-animate="fadeInUp" data-delay=".1">Using the distributed ledger technology to verify reliability is radically different from feedback evaluation systems, since it show how many real transactions have been successfully performed &amp; confirmed by chatbot&#39;s real users - participants of the registry in chatbot industry</p>
+<a class="play-btn video-play animated" data-animate="fadeInUp" data-delay=".2" href="https://www.youtube.com/watch?v=SSo_EIwHSd4"><span>Watch Video</span> <span>What and How it work</span> </a></div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .conatiner  --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad no-pb section-bg-alt">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-5">
+<div class="res-m-btm animated" data-animate="fadeInUp" data-delay=".1"><img alt="graph" src="images/graph-dark-b.png" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6 offset-md-1">
+<div class="text-block">
+<h4 class="animated" data-animate="fadeInUp" data-delay="0">What is Uni?</h4>
+
+<p class="lead animated" data-animate="fadeInUp" data-delay=".1">Uni is&nbsp;that open source&nbsp;decentralized platform that runs smart contracts on Ethereum blockchain &amp;&nbsp;crypto currency of Unibot.&nbsp;</p>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".2">We believe that a broad group of participants can come together to create an open&nbsp;Ecosystem of tools for digital communication and commerce that prioritizes consumer experience.</p>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".3">At the end, Our aims to our Chatbot Ecosystem into a unified blockchain ecosystem, which will make business truly efficient, transparent, and reliable.</p>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg-btoa" id="apps">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<div class="section-head">
+<div class="heading-animation"></div>
+
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">Building Trust Chatbot<span>Unibot</span></h2>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".1">On Unibot&rsquo;you can build your own personal bot, to be your virtual assistant, to automate your social media or email, to be you, to be your friend. Our platform is free and open source, including our AI engine, our scripting languages Self and AIML, and our web, Android, and iOS.</p>
+</div>
+</div>
+</div>
+
+<div class="row align-items-center">
+<div class="col-md-6">
+<div class="res-m-btm animated" data-animate="fadeInUp" data-delay=".1"><img alt="graph" src="images/graph-dark-c.png" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-5 offset-md-1">
+<div class="text-block">
+<p class="animated" data-animate="fadeInUp" data-delay="0">Our full solution can help you build and control communicate and interact with customers in real time via trustful chatbots, providing also the opportunity to make secure payment using Uni cryoto currency.</p>
+
+<ul class="animated" data-animate="fadeInUp" data-delay=".1">
+	<li>24/24h Business Process Automation A.I Chatbot</li>
+	<li>Enterrise Grade Features Bot-App</li>
+	<li>Omnichannel Deployany Device, Anytime.</li>
+	<li>Blockchain Verify, Confirm Trustful Chatbot</li>
+	<li>Secure Payment Transation With Uni Crypto-currency</li>
+</ul>
+
+<ul class="btns">
+	<li class="animated" data-animate="fadeInUp" data-delay="0"><a class="btn btn-sm" href="#">GET THE APP SOON</a></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".2"></li>
+</ul>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg-alt" id="tokenSale">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">TOKEN SALE <span>TOKEN</span></h2>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".1">ICO Crypto token will be released on the basis of Ethereum. To buy token by deposit your ETH with KYC.</p>
+</div>
+</div>
+</div>
+
+<div class="row align-items-center">
+<div class="col-lg-6 res-m-bttm">
+<div class="row event-info">
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay="0">
+<h6>Start</h6>
+
+<p>Feb 8, 2018 (9:00AM GMT)</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay=".1">
+<h6>Number of tokens for sale</h6>
+
+<p>900,000 ICC (9%)</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay=".2">
+<h6>End</h6>
+
+<p>Feb 20, 2018 (11:00AM GMT)</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay=".3">
+<h6>Tokens exchange rate</h6>
+
+<p>1 ETH = 650 ICC, 1 BTC = 1940 ICC</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay=".4">
+<h6>Acceptable currencies</h6>
+
+<p>ETH, BTC, LTC</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-sm-6">
+<div class="event-single-info animated" data-animate="fadeInUp" data-delay=".5">
+<h6>Minimal transaction amount</h6>
+
+<p>1 ETH/ 1 BTC/ 1 LTC</p>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .col  -->
+
+<div class="col-lg-5 offset-lg-1">
+<div class="countdown-box text-center animated" data-animate="fadeInUp" data-delay=".3">
+<div class="token-countdown d-flex align-content-stretch" data-date="2018/08/05"></div>
+<a class="btn btn-alt btn-sm" href="#">Join &amp; BUY TOKEN NOW</a>
+
+<ul class="icon-list">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  -->
+
+<div class="gaps size-3x"></div>
+
+<div class="gaps size-3x d-none d-md-block"></div>
+<!-- .gaps  -->
+
+<div class="row text-center">
+<div class="col-md-6">
+<div class="single-chart res-m-btm">
+<h3 class="sub-heading">Distribution<br class="hidden-xs" />
+of tokens</h3>
+
+<div class="animated" data-animate="fadeInUp" data-delay="0"><img alt="chart" src="images/chart-dark-a.png" /></div>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="single-chart">
+<h3 class="sub-heading">Use<br class="hidden-xs" />
+of proceeds</h3>
+
+<div class="animated" data-animate="fadeInUp" data-delay=".1"><img alt="chart" src="images/chart-dark-b.png" /></div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg section-connect" id="roadmap">
+<div class="container">
+<div class="row text-center">
+<div class="col">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">Our Roadmap <span>RoadMap</span></h2>
+</div>
+</div>
+</div>
+
+<div class="row roadmap-list align-items-end animated" data-animate="fadeInUp" data-delay="0">
+<div class="col-lg">
+<div class="single-roadmap roadmap-sm roadmap-done">
+<h6>March 2018</h6>
+
+<p>Start of the ICO Crypto Platform Development.</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg width-0">
+<div class="single-roadmap roadmap-down roadmap-done">
+<h6>June 2018</h6>
+
+<p>Over 100 merchants on site</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg">
+<div class="single-roadmap roadmap-lg">
+<h6>June 2018</h6>
+
+<p>Launched of mobile Apps</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg width-0">
+<div class="single-roadmap roadmap-down">
+<h6>August 2018</h6>
+
+<p>ICO preparation &amp; Press Tour</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg">
+<div class="single-roadmap roadmap-sm">
+<h6>October 2018</h6>
+
+<p>Start Token Sale Round (1)</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg width-0">
+<div class="single-roadmap roadmap-down">
+<h6>December 2018</h6>
+
+<p>Partnership for the future EcoSystem</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg">
+<div class="single-roadmap roadmap-lg">
+<h6>January 2019</h6>
+
+<p>Our team set-up and commercial preparation</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg width-0">
+<div class="single-roadmap roadmap-down">
+<h6>May 2019</h6>
+
+<p>Priority opening for Token holder</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg">
+<div class="single-roadmap roadmap-sm">
+<h6>June 2019</h6>
+
+<p>Start Token Sale Round (2)</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg width-0">
+<div class="single-roadmap roadmap-down">
+<h6>Octorber 2019</h6>
+
+<p>Blockchain usage announcement for global Network</p>
+</div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg">
+<div class="single-roadmap roadmap-lg">
+<h6>December 2019</h6>
+
+<p>Operational Launch United States to general</p>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad no-pb section-bg-alt section-fix" id="team">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">Powered by a Team <span>Team</span></h2>
+
+<p class="animated" data-animate="fadeInUp" data-delay="0.1">The ICO Crypto Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing &amp; licensing.</p>
+</div>
+</div>
+</div>
+
+<div class="row text-center">
+<div class="col-md-6 col-lg-3">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".2">
+<div class="team-photo"><img alt="" src="images/team-a-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Waylon Dalton</h5>
+<span class="team-title">CEO &amp; Lead Blockchain </span>
+
+<ul class="team-social">
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-1"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="" src="images/team-a-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Waylon Dalton</h3>
+
+<p class="sub-title">CEO &amp; Lead Blockchain</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6 col-lg-3">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
+<div class="team-photo"><img alt="team" src="images/team-b-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Stefan Harary</h5>
+<span class="team-title">CTO &amp; Senior Developer</span>
+
+<ul class="team-social">
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-2"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-b-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Stefan Harary</h3>
+
+<p class="sub-title">CTO &amp; Senior Developer</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6 col-lg-3">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".4">
+<div class="team-photo"><img alt="team" src="images/team-c-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Moises Teare</h5>
+<span class="team-title">Blochain App Developer</span>
+
+<ul class="team-social">
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-3"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-c-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Moises Teare</h3>
+
+<p class="sub-title">Blochain App Developer</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6 col-lg-3">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
+<div class="team-photo"><img alt="team" src="images/team-d-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Gabriel Bernal</h5>
+<span class="team-title">Community Management</span>
+
+<ul class="team-social">
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-4"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-d-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Gabriel Bernal</h3>
+
+<p class="sub-title">Community Management</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  --></div>
+<!-- .row  -->
+
+<div class="row">
+<div class="col-md-12">
+<div class="gaps size-2x"></div>
+
+<h3 class="sub-heading ucap">Advisors</h3>
+
+<div class="gaps size-2x"></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-10 offset-md-1">
+<div class="row text-center">
+<div class="col-lg-4 col-md-6">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".1">
+<div class="team-photo"><img alt="team" src="images/team-e-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Dylan Finch</h5>
+<span class="team-title">Board Advisor</span></div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-5"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-e-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Dylan Finch</h3>
+
+<p class="sub-title">Board Advisor</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg-4 col-md-6">
+<div class="team-circle animated" data-animate="fadeInUp" data-delay=".2">
+<div class="team-photo"><img alt="team" src="images/team-f-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Julian Paten</h5>
+<span class="team-title">Board Advisor</span></div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-6"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-f-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Julian Paten</h3>
+
+<p class="sub-title">Board Advisor</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  -->
+
+<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 animated" data-animate="fadeInUp" data-delay=".3">
+<div class="team-circle">
+<div class="team-photo"><img alt="team" src="images/team-g-sq.jpg" /></div>
+
+<div class="team-info">
+<h5 class="team-name">Jaxon Kilburn</h5>
+<span class="team-title">Board Advisor</span></div>
+<!-- Start .team-profile  -->
+
+<div class="team-profile mfp-hide" id="team-profile-7"><button class="mfp-close" title="Close" type="button">&times;</button>
+
+<div class="container-fluid">
+<div class="row no-mg">
+<div class="col-md-6">
+<div class="team-profile-photo"><img alt="team" src="images/team-g-lg.jpg" /></div>
+</div>
+<!-- .col  -->
+
+<div class="col-md-6">
+<div class="team-profile-info">
+<h3 class="name">Jaxon Kilburn</h3>
+
+<p class="sub-title">Board Advisor</p>
+
+<ul class="tpi-social">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.</p>
+
+<p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+
+<div class="skill-bars">
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">HTML5</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">85%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:85%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">CSS3</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">90%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:90%"></div>
+</div>
+</div>
+
+<div class="single-skill-bar">
+<div class="row no-mg">
+<div class="col-8 no-pd"><span class="skill-title">Java</span></div>
+
+<div class="col-4 text-right no-pd"><span class="skill-percent">75%</span></div>
+</div>
+
+<div class="skill-bar">
+<div class="skill-bar-percent gradiant-background" style="width:75%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .container  --></div>
+<!-- .team-profile  --></div>
+</div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+<!-- .col  --></div>
+<!-- .row  --></div>
+</div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg-alt" id="partners">
+<div class="container">
+<div class="row text-center">
+<div class="col">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">ICO CRYPTO PARTNERS <span>Partners</span></h2>
+</div>
+</div>
+</div>
+
+<div class="partner-list">
+<div class="row text-center">
+<div class="col-sm">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay="0"><img alt="partner" src="images/partner-md-a.png" /></div>
+</div>
+
+<div class="col-sm">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".1"><img alt="partner" src="images/partner-md-b.png" /></div>
+</div>
+
+<div class="col-sm">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".2"><img alt="partner" src="images/partner-md-c.png" /></div>
+</div>
+</div>
+
+<div class="row text-center">
+<div class="col-md-8 offset-md-2">
+<div class="row">
+<div class="col-sm">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".3"><img alt="partner" src="images/partner-md-d.png" /></div>
+</div>
+
+<div class="col-sm">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".4"><img alt="partner" src="images/partner-md-e.png" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg section-connect" id="media-partner">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-6 offset-md-3">
+<div class="section-head">
+<h6 class="section-title-sm animated" data-animate="fadeInUp" data-delay="0">As seen in</h6>
+</div>
+</div>
+</div>
+
+<div class="partner-list">
+<div class="row text-center">
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".1"><img alt="partner" src="images/partner-xs-a.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".2"><img alt="partner" src="images/partner-xs-b.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".3"><img alt="partner" src="images/partner-xs-c.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".4"><img alt="partner" src="images/partner-xs-d.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".5"><img alt="partner" src="images/partner-xs-e.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".6"><img alt="partner" src="images/partner-xs-f.png" /></div>
+</div>
+</div>
+
+<div class="row text-center">
+<div class="col-md-10 offset-md-1">
+<div class="row">
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".7"><img alt="partner" src="images/partner-sm-a.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".8"><img alt="partner" src="images/partner-sm-b.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay=".9"><img alt="partner" src="images/partner-sm-c.png" /></div>
+</div>
+
+<div class="col-sm col-6">
+<div class="single-partner animated" data-animate="fadeInUp" data-delay="1"><img alt="partner" src="images/partner-sm-d.png" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg-dark blog-section" id="blogs">
+<div class="container">
+<div class="row text-center">
+<div class="col">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">ICO Crypto NEWS <span>News</span></h2>
+</div>
+</div>
+</div>
+<!-- .row -->
+
+<div class="blog-list">
+<div class="row">
+<div class="col-lg-4 offset-lg-0 col-sm-8 offset-sm-2">
+<div class="blog-item animated" data-animate="fadeInUp" data-delay="0">
+<div class="blog-photo"><a href="blog-single-dark.html"><img alt="blog-photo" src="images/blog-thumb-a.jpg" /></a></div>
+
+<div class="blog-texts">
+<ul class="blog-meta">
+	<li><a href="#">12 Mar, 2018</a></li>
+	<li><a href="#">Blockchain</a></li>
+</ul>
+
+<h5 class="blog-title"><a href="blog-single-dark.html">The Intersection Where Blockchain Meets Energy</a></h5>
+
+<p>Blockchain Meets Energy Surplus of electrical energy is sometimes ut perspiciatis unde omnis iste natus...</p>
+</div>
+</div>
+</div>
+<!-- .col -->
+
+<div class="col-lg-4 offset-lg-0 col-sm-8 offset-sm-2">
+<div class="blog-item animated" data-animate="fadeInUp" data-delay=".1">
+<div class="blog-photo"><a href="blog-single-dark.html"><img alt="blog-photo" src="images/blog-thumb-b.jpg" /></a></div>
+
+<div class="blog-texts">
+<ul class="blog-meta">
+	<li><a href="#">26 Feb, 2018</a></li>
+	<li><a href="#">Cryptocurrency</a></li>
+</ul>
+
+<h5 class="blog-title"><a href="blog-single-dark.html">Pros &amp; Cons of Premined Cryptocurrencies</a></h5>
+
+<p>Premine involves mining large quantities of the coin before the sed do eiusmod tempor incididunt ut ...</p>
+</div>
+</div>
+</div>
+<!-- .col -->
+
+<div class="col-lg-4 offset-lg-0 col-sm-8 offset-sm-2">
+<div class="blog-item animated" data-animate="fadeInUp" data-delay=".2">
+<div class="blog-photo"><a href="blog-single-dark.html"><img alt="blog-photo" src="images/blog-thumb-c.jpg" /></a></div>
+
+<div class="blog-texts">
+<ul class="blog-meta">
+	<li><a href="#">08 Feb, 2018</a></li>
+	<li><a href="#">Technology</a></li>
+</ul>
+
+<h5 class="blog-title"><a href="blog-single-dark.html">How &amp; Where To Market Your ICO Startup</a></h5>
+
+<p>So you&#39;ve got a business idea, and a nifty way to incorporate sunt in culpa qui officia deserunt...</p>
+</div>
+</div>
+</div>
+<!-- .col --></div>
+<!-- .row --></div>
+<!-- .blog-list -->
+
+<div class="row text-center">
+<div class="col-md-12"><a class="btn btn-more" href="blog-archive-dark.html">Read All News </a></div>
+</div>
+</div>
+<!-- .container --></div>
+<!-- Start Section --><!-- Start Section -->
+
+<div class="section section-pad no-pb section-bg-alt" id="faq">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">Frequently asked questions <span>FAQS</span></h2>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".1">Below we&rsquo;ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using the contact form below.</p>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-8 offset-md-2">
+<div class="tab-custom"><!-- Nav tabs -->
+<ul class="nav nav-tabs text-center animated" data-animate="fadeInUp" data-delay="0">
+	<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-1">General</a></li>
+	<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-2">Pre-ICO &amp; ICO</a></li>
+	<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-3">Tokens</a></li>
+	<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-4">CLIENT</a></li>
+	<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-5">Legal</a></li>
+</ul>
+<!-- Tab panes -->
+
+<div class="tab-content animated" data-animate="fadeInUp" data-delay=".1">
+<div class="tab-pane fade show active" id="tab-1">
+<div class="accordion" id="accordion-1">
+<div class="card">
+<div class="card-header">
+<h5><a data-target="#collapse-1-1" data-toggle="collapse"> What is ICO Crypto? </a></h5>
+</div>
+
+<div class="collapse show" data-parent="#accordion-1" id="collapse-1-1">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-1-2" data-toggle="collapse"> What cryptocurrencies can I use to purchase? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-1" id="collapse-1-2">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-1-3" data-toggle="collapse"> How can I participate in the ICO Token sale? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-1" id="collapse-1-3">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-1-4" data-toggle="collapse"> How do I benefit from the ICO Token? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-1" id="collapse-1-4">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End tab-pane -->
+
+<div class="tab-pane fade" id="tab-2">
+<div class="accordion" id="accordion-2">
+<div class="card">
+<div class="card-header">
+<h5><a data-target="#collapse-2-1" data-toggle="collapse"> Which of us ever undertakes laborious? </a></h5>
+</div>
+
+<div class="collapse show" data-parent="#accordion-2" id="collapse-2-1">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-2-2" data-toggle="collapse"> Who do not know how to pursue rationally? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-2" id="collapse-2-2">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-2-4" data-toggle="collapse"> Their separate existence is a myth? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-2" id="collapse-2-4">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-2-3" data-toggle="collapse"> Pityful a rethoric question ran over her cheek? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-2" id="collapse-2-3">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End tab-pane -->
+
+<div class="tab-pane fade" id="tab-3">
+<div class="accordion" id="accordion-3">
+<div class="card">
+<div class="card-header">
+<h5><a data-target="#collapse-3-1" data-toggle="collapse"> When she reached the first hills? </a></h5>
+</div>
+
+<div class="collapse show" data-parent="#accordion-3" id="collapse-3-1">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-3-2" data-toggle="collapse"> Big Oxmox advised her not to do? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-3" id="collapse-3-2">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-3-3" data-toggle="collapse"> Which roasted parts of sentences fly into your mouth? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-3" id="collapse-3-3">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-3-4" data-toggle="collapse"> Vokalia and Consonantia, there live? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-3" id="collapse-3-4">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End tab-pane -->
+
+<div class="tab-pane fade" id="tab-4">
+<div class="accordion" id="accordion-4">
+<div class="card">
+<div class="card-header">
+<h5><a data-target="#collapse-4-1" data-toggle="collapse"> Who formed us in his own image? </a></h5>
+</div>
+
+<div class="collapse show" data-parent="#accordion-4" id="collapse-4-1">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-4-2" data-toggle="collapse"> While the lovely valley teems with vapour? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-4" id="collapse-4-2">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-4-3" data-toggle="collapse"> Which was created for the bliss of souls like mine? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-4" id="collapse-4-3">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-4-4" data-toggle="collapse"> Wonderful serenity has taken of my entire soul? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-4" id="collapse-4-4">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End tab-pane -->
+
+<div class="tab-pane fade" id="tab-5">
+<div class="accordion" id="accordion-5">
+<div class="card">
+<div class="card-header">
+<h5><a data-target="#collapse-5-1" data-toggle="collapse"> Illustrated magazine and housed in a nice? </a></h5>
+</div>
+
+<div class="collapse show" data-parent="#accordion-5" id="collapse-5-1">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-5-2" data-toggle="collapse"> Samsa was a travelling salesman and above it there? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-5" id="collapse-5-2">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-5-3" data-toggle="collapse"> Slightly domed and divided by arches? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-5" id="collapse-5-3">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h5><a class="collapsed" data-target="#collapse-5-4" data-toggle="collapse"> One morning, when Gregor Samsa? </a></h5>
+</div>
+
+<div class="collapse" data-parent="#accordion-5" id="collapse-5-4">
+<div class="card-body">
+<p>ICO Crypto - is unique platform; that is secure, smart and easy-to-use platform, and completely disrupting the way businesses raise capital.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- End accordion --></div>
+<!-- End tab-pane --></div>
+<!-- End tab-content --></div>
+<!-- End tab-custom --></div>
+<!-- End col --></div>
+<!-- End row --></div>
+<!-- End container --></div>
+<!-- End Section --><!-- Start Section -->
+
+<div class="section section-pad section-bg-alt" id="contact">
+<div class="container">
+<div class="row text-center">
+<div class="col">
+<div class="section-head">
+<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">Contact ICO CRYPTO <span>Contact</span></h2>
+
+<p class="animated" data-animate="fadeInUp" data-delay=".1">Any question? Reach out to us and we&rsquo;ll get back to you shortly.</p>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<ul class="contact-info">
+	<li class="animated" data-animate="fadeInUp" data-delay="0"><span>+44 0123 4567</span></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".1"><span>info@yourcompany.com</span></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".2"><span>Join us on Telegram</span></li>
+</ul>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<form action="form/contact.php" class="form-message text-center" id="contact-form" method="post">
+<div class="form-results"></div>
+
+<div class="input-field animated" data-animate="fadeInUp" data-delay=".3"><input class="input-line required" name="contact-name" type="text" /> <label class="input-title">Your Name</label></div>
+
+<div class="input-field animated" data-animate="fadeInUp" data-delay=".4"><input class="input-line required email" name="contact-email" type="email" /> <label class="input-title">Your Email</label></div>
+
+<div class="input-field animated" data-animate="fadeInUp" data-delay=".5"><textarea class="txtarea input-line required" name="contact-message"></textarea><label class="input-title">Your Message</label></div>
+<input class="d-none" name="form-anti-honeypot" type="text" value="" />
+<div class="input-field animated" data-animate="fadeInUp" data-delay=".6"><button class="btn" type="submit">Submit</button></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- End Section --><!-- Start Section -->
+
+<div class="section subscribe-section section-pad-md section-bg section-connect">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-6 offset-md-3">
+<h4 class="section-title-md animated" data-animate="fadeInUp" data-delay="0">Don&#39;t miss out, Stay updated</h4>
+
+<form action="form/subscribe.php" class="subscription-form inline-form" id="subscribe-form" method="post"><input class="input-round required email" name="youremail" placeholder="Enter your email address" type="text" /> <input class="d-none" name="form-anti-honeypot" type="text" value="" /><button class="btn btn-plane" type="submit">Subscribe</button>
+
+<div class="subscribe-results"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- End Section --><!-- Start Section -->
+
+<div class="section footer-scetion no-pt section-pad-sm section-bg">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-12">
+<ul class="social">
+	<li class="animated" data-animate="fadeInUp" data-delay="0"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".1"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".2"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".3"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".4"></li>
+	<li class="animated" data-animate="fadeInUp" data-delay=".5"></li>
+</ul>
+<span class="copyright-text animated" data-animate="fadeInUp" data-delay=".3">Copyright &copy; 2018, ICO Crypto. Template Made By <a href="http://unibot.org" target="_blank">Unibot</a> &amp; Just demo layout. <span>All trademarks and copyrights belong to their respective owners.</span> </span></div>
+</div>
+</div>
+</div>
+<!-- End Section --><!-- Preloader !remove please if you do not want -->
+
+<div id="preloader">
+<div id="loader"></div>
+
+<div class="loader-section loader-top"></div>
+
+<div class="loader-section loader-bottom"></div>
+</div>
+<!-- Preloader End --><!-- JavaScript (include all script here) --><script src="assets/js/jquery.bundle.js?ver=113"></script><script src="assets/js/script.js?ver=113"></script></body>
+</html>

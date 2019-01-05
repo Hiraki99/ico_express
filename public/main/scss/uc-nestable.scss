@@ -1,0 +1,14 @@
+@import "variable.scss"; // Variable.scss
+
+.nestable-cart {
+    overflow: hidden;
+}
+// 
+// .dd-handle,
+// .dd3-content {
+//     color: #ddd!important;
+// }
+
+.dd-item > button {
+    height: 21px;
+}

@@ -1,0 +1,74 @@
+extends ../../layoutadmin
+block content_dashboard
+    .row.page-titles
+        .col-lg-6.offset-lg-3
+            h2(style='padding: 20px')
+                center Create New Account Admin
+            .card
+                .card-body
+                    .form-validation
+                        #form.form-valide(action='#', method='post')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-username')
+                                    | Username 
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-username.form-control(type='text',required, name='username', placeholder='Enter a name..')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-nickname')
+                                    | Nick name 
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-nickname.form-control(type='text',required, name='nickname', placeholder='Enter a nickname..')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-email')
+                                    | Email
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-email.form-control(type='email',required, name='email', placeholder='Enter a Email...')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-email')
+                                    | Address
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-address.form-control(type='text',required, name='address', placeholder='Enter a Address...')
+                            //- .form-group.row
+                            //-     label.col-lg-4.col-form-label(for='val-email')
+                            //-         | Private Key
+                            //-         span.text-danger *
+                            //-     .col-lg-6
+                            //-         input#val-key.form-control(type='text',required, name='private', placeholder='Enter a Private Key To Confirm')
+                            
+                            .form-group.row
+                                label.col-sm-4.control-label
+                                    | Type 
+                                    span.text-danger *
+                                .col-sm-6
+                                    select#type.form-control
+                                        option(value='Supporter') Supporter
+                                        option(value='Manager') Manager
+                            .form-group.row
+                                label.col-lg-4.col-form-label
+                                    | gasPrice
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-gasPrice.form-control(type='number',required, name='gasPrice', placeholder='Enter a gasPrice', value='18')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-confirm-password')
+                                    | Password of Admin
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-confirm-password.form-control(type='password',required, name='password', placeholder='..and confirm it!')
+                            .form-group.row
+                                label.col-lg-4.col-form-label(for='val-confirm-key')
+                                    | Private Key of Admin
+                                    span.text-danger *
+                                .col-lg-6
+                                    input#val-confirm-key.form-control(type='password',required, name='key', placeholder='private key to update smart contract!')
+                            .form-group.row
+                                .col-lg-8.ml-auto
+                                    button#create-button.btn.btn-primary(type='submit') Submit
+                                    span#error-signin-admin(style='color: red;display:none') Create account admin fail
+                        #loading.login-wrap(style='display:none')
+                            img.loading(src='/images/loading.gif' style='margin-top:50px;margin-left:43px')
+    script(src='/javascript/admin/admin.js')

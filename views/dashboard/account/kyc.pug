@@ -1,0 +1,1007 @@
+extends ../../layout_dashboard
+block content_dashboard
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    div.card
+        div(style='margin:10px')
+            center(style='margin-left:10px;margin-bottom:20px;')  
+                h2 KYC (Know your customer)
+            .row
+                .col-12
+                    p(style='margin-left:10px;')
+                        span(style='color:red') * 
+                        span(style='font-size:13px') Please completed information below
+                    p(style='margin-left:10px;')
+                        span(style='color:red') * 
+                        span(style='font-size:13px') We need kyc to you that allows to verify users and to prevent fraud.
+            hr(style='')
+        div(style='margin:10px')
+            if (warning.wallet)
+                #no-address.mfp-hide.col-lg-4.divcenter
+                    .alert.address-form.mfp-newspaper
+                        div(style='border-bottom: 1px solid #e9ecef;')
+                            button.close(type='button', onclick='window.location.href ="/dashboard/wallet"') ×
+                            center
+                                h4.alert-heading  Warning!
+                                if (warning.wallet && warning.auth)
+                                    p To KYC account. Please click button below to enable 2fa and enter your address wallet
+                                if (warning.wallet && !warning.auth)
+                                    p To KYC account. Please click button below to enter your address wallet
+                                if (!warning.wallet && warning.auth)
+                                    p To KYC account. Please click button below to enable 2fa account
+                        .address-form
+                            .form-valide
+                                .form-group
+                                    center
+                                        .col-lg-8
+                                            if (warning.wallet)
+                                                button.btn.btn-primary(type='submit', onclick='window.location.href ="/dashboard/wallet"') Redirect Wallet
+                                            if (warning.auth)
+                                                button.btn.btn-primary(type='submit', onclick='window.location.href ="/account/authy"') Redirect Auth
+                script.
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#no-address' 
+                        },
+                        type: 'inline',preloader: false,
+                        showCloseBtn: false, closeOnBgClick: false
+                        
+                    });           
+            else
+                if (data == null)
+                    .row.justify-content-center
+                        .col-lg-12
+                            .card
+                                .card-body
+                                    .form-validation
+                                        form#submit_form.form-valide(action='/account/uploadkyc',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                            .form-group.row
+                                                label.col-lg-2.col-form-label(for='val-username')
+                                                    | First Name 
+                                                    span.text-danger *
+                                                .col-lg-3
+                                                    input#val_firstname.form-control(type='text', name='val_firstname', placeholder='Enter a First Name')
+                                                label.col-lg-2.col-form-label(for='val-username')
+                                                    | Last Name
+                                                    span.text-danger *
+                                                .col-lg-5
+                                                    input#val-lastname.form-control(type='text', name='val_lastname', placeholder='Enter a Last Name')
+                                            .form-group.row
+                                                label.col-lg-2.col-form-label(for='val-phoneus')
+                                                    | Phone Number 
+                                                    span.text-danger *
+                                                .col-lg-10
+                                                    input#val-phoneus.form-control(type='text', name='val_phoneus', placeholder='+841659685663')
+                                            .form-group.row
+                                                label.col-lg-2.col-form-label(for='val-nationality')
+                                                    | Nationality
+                                                    span.text-danger *
+                                                .col-lg-10
+                                                    select#val-nationality.form-control(name='val_nationality')
+                                                        option(value='None') Select National
+                                                        option(value='afghan') Afghan
+                                                        option(value='albanian') Albanian
+                                                        option(value='algerian') Algerian
+                                                        option(value='american') American
+                                                        option(value='andorran') Andorran
+                                                        option(value='angolan') Angolan
+                                                        option(value='antiguans') Antiguans
+                                                        option(value='argentinean') Argentinean
+                                                        option(value='armenian') Armenian
+                                                        option(value='australian') Australian
+                                                        option(value='austrian') Austrian
+                                                        option(value='azerbaijani') Azerbaijani
+                                                        option(value='bahamian') Bahamian
+                                                        option(value='bahraini') Bahraini
+                                                        option(value='bangladeshi') Bangladeshi
+                                                        option(value='barbadian') Barbadian
+                                                        option(value='barbudans') Barbudans
+                                                        option(value='batswana') Batswana
+                                                        option(value='belarusian') Belarusian
+                                                        option(value='belgian') Belgian
+                                                        option(value='belizean') Belizean
+                                                        option(value='beninese') Beninese
+                                                        option(value='bhutanese') Bhutanese
+                                                        option(value='bolivian') Bolivian
+                                                        option(value='bosnian') Bosnian
+                                                        option(value='brazilian') Brazilian
+                                                        option(value='british') British
+                                                        option(value='bruneian') Bruneian
+                                                        option(value='bulgarian') Bulgarian
+                                                        option(value='burkinabe') Burkinabe
+                                                        option(value='burmese') Burmese
+                                                        option(value='burundian') Burundian
+                                                        option(value='cambodian') Cambodian
+                                                        option(value='cameroonian') Cameroonian
+                                                        option(value='canadian') Canadian
+                                                        option(value='cape verdean') Cape Verdean
+                                                        option(value='central african') Central African
+                                                        option(value='chadian') Chadian
+                                                        option(value='chilean') Chilean
+                                                        option(value='chinese') Chinese
+                                                        option(value='colombian') Colombian
+                                                        option(value='comoran') Comoran
+                                                        option(value='congolese') Congolese
+                                                        option(value='costa rican') Costa Rican
+                                                        option(value='croatian') Croatian
+                                                        option(value='cuban') Cuban
+                                                        option(value='cypriot') Cypriot
+                                                        option(value='czech') Czech
+                                                        option(value='danish') Danish
+                                                        option(value='djibouti') Djibouti
+                                                        option(value='dominican') Dominican
+                                                        option(value='dutch') Dutch
+                                                        option(value='east timorese') East Timorese
+                                                        option(value='ecuadorean') Ecuadorean
+                                                        option(value='egyptian') Egyptian
+                                                        option(value='emirian') Emirian
+                                                        option(value='equatorial guinean') Equatorial Guinean
+                                                        option(value='eritrean') Eritrean
+                                                        option(value='estonian') Estonian
+                                                        option(value='ethiopian') Ethiopian
+                                                        option(value='fijian') Fijian
+                                                        option(value='filipino') Filipino
+                                                        option(value='finnish') Finnish
+                                                        option(value='french') French
+                                                        option(value='gabonese') Gabonese
+                                                        option(value='gambian') Gambian
+                                                        option(value='georgian') Georgian
+                                                        option(value='german') German
+                                                        option(value='ghanaian') Ghanaian
+                                                        option(value='greek') Greek
+                                                        option(value='grenadian') Grenadian
+                                                        option(value='guatemalan') Guatemalan
+                                                        option(value='guinea-bissauan') Guinea-Bissauan
+                                                        option(value='guinean') Guinean
+                                                        option(value='guyanese') Guyanese
+                                                        option(value='haitian') Haitian
+                                                        option(value='herzegovinian') Herzegovinian
+                                                        option(value='honduran') Honduran
+                                                        option(value='hungarian') Hungarian
+                                                        option(value='icelander') Icelander
+                                                        option(value='indian') Indian
+                                                        option(value='indonesian') Indonesian
+                                                        option(value='iranian') Iranian
+                                                        option(value='iraqi') Iraqi
+                                                        option(value='irish') Irish
+                                                        option(value='israeli') Israeli
+                                                        option(value='italian') Italian
+                                                        option(value='ivorian') Ivorian
+                                                        option(value='jamaican') Jamaican
+                                                        option(value='japanese') Japanese
+                                                        option(value='jordanian') Jordanian
+                                                        option(value='kazakhstani') Kazakhstani
+                                                        option(value='kenyan') Kenyan
+                                                        option(value='kittian and nevisian') Kittian and Nevisian
+                                                        option(value='kuwaiti') Kuwaiti
+                                                        option(value='kyrgyz') Kyrgyz
+                                                        option(value='laotian') Laotian
+                                                        option(value='latvian') Latvian
+                                                        option(value='lebanese') Lebanese
+                                                        option(value='liberian') Liberian
+                                                        option(value='libyan') Libyan
+                                                        option(value='liechtensteiner') Liechtensteiner
+                                                        option(value='lithuanian') Lithuanian
+                                                        option(value='luxembourger') Luxembourger
+                                                        option(value='macedonian') Macedonian
+                                                        option(value='malagasy') Malagasy
+                                                        option(value='malawian') Malawian
+                                                        option(value='malaysian') Malaysian
+                                                        option(value='maldivan') Maldivan
+                                                        option(value='malian') Malian
+                                                        option(value='maltese') Maltese
+                                                        option(value='marshallese') Marshallese
+                                                        option(value='mauritanian') Mauritanian
+                                                        option(value='mauritian') Mauritian
+                                                        option(value='mexican') Mexican
+                                                        option(value='micronesian') Micronesian
+                                                        option(value='moldovan') Moldovan
+                                                        option(value='monacan') Monacan
+                                                        option(value='mongolian') Mongolian
+                                                        option(value='moroccan') Moroccan
+                                                        option(value='mosotho') Mosotho
+                                                        option(value='motswana') Motswana
+                                                        option(value='mozambican') Mozambican
+                                                        option(value='namibian') Namibian
+                                                        option(value='nauruan') Nauruan
+                                                        option(value='nepalese') Nepalese
+                                                        option(value='new zealander') New Zealander
+                                                        option(value='ni-vanuatu') Ni-Vanuatu
+                                                        option(value='nicaraguan') Nicaraguan
+                                                        option(value='nigerien') Nigerien
+                                                        option(value='north korean') North Korean
+                                                        option(value='northern irish') Northern Irish
+                                                        option(value='norwegian') Norwegian
+                                                        option(value='omani') Omani
+                                                        option(value='pakistani') Pakistani
+                                                        option(value='palauan') Palauan
+                                                        option(value='panamanian') Panamanian
+                                                        option(value='papua new guinean') Papua New Guinean
+                                                        option(value='paraguayan') Paraguayan
+                                                        option(value='peruvian') Peruvian
+                                                        option(value='polish') Polish
+                                                        option(value='portuguese') Portuguese
+                                                        option(value='qatari') Qatari
+                                                        option(value='romanian') Romanian
+                                                        option(value='russian') Russian
+                                                        option(value='rwandan') Rwandan
+                                                        option(value='saint lucian') Saint Lucian
+                                                        option(value='salvadoran') Salvadoran
+                                                        option(value='samoan') Samoan
+                                                        option(value='san marinese') San Marinese
+                                                        option(value='sao tomean') Sao Tomean
+                                                        option(value='saudi') Saudi
+                                                        option(value='scottish') Scottish
+                                                        option(value='senegalese') Senegalese
+                                                        option(value='serbian') Serbian
+                                                        option(value='seychellois') Seychellois
+                                                        option(value='sierra leonean') Sierra Leonean
+                                                        option(value='singaporean') Singaporean
+                                                        option(value='slovakian') Slovakian
+                                                        option(value='slovenian') Slovenian
+                                                        option(value='solomon islander') Solomon Islander
+                                                        option(value='somali') Somali
+                                                        option(value='south african') South African
+                                                        option(value='south korean') South Korean
+                                                        option(value='spanish') Spanish
+                                                        option(value='sri lankan') Sri Lankan
+                                                        option(value='sudanese') Sudanese
+                                                        option(value='surinamer') Surinamer
+                                                        option(value='swazi') Swazi
+                                                        option(value='swedish') Swedish
+                                                        option(value='swiss') Swiss
+                                                        option(value='syrian') Syrian
+                                                        option(value='taiwanese') Taiwanese
+                                                        option(value='tajik') Tajik
+                                                        option(value='tanzanian') Tanzanian
+                                                        option(value='thai') Thai
+                                                        option(value='togolese') Togolese
+                                                        option(value='tongan') Tongan
+                                                        option(value='trinidadian or tobagonian') Trinidadian or Tobagonian
+                                                        option(value='tunisian') Tunisian
+                                                        option(value='turkish') Turkish
+                                                        option(value='tuvaluan') Tuvaluan
+                                                        option(value='ugandan') Ugandan
+                                                        option(value='ukrainian') Ukrainian
+                                                        option(value='uruguayan') Uruguayan
+                                                        option(value='uzbekistani') Uzbekistani
+                                                        option(value='venezuelan') Venezuelan
+                                                        option(value='vietnamese') Vietnamese
+                                                        option(value='welsh') Welsh
+                                                        option(value='yemenite') Yemenite
+                                                        option(value='zambian') Zambian
+                                                        option(value='zimbabwean') Zimbabwean
+
+                                            .form-group.row
+                                                label.col-lg-2.col-form-label(for='val-suggestions')
+                                                    | Identification Type 
+                                                    span.text-danger *
+                                                .col-lg-10
+                                                    select#val_identification.form-control(name='val_identification_type',onchange='setIndentify()')
+                                                        option(value='identify_cart') Please select
+                                                        option(value='identify_cart') Identity Card
+                                                        option(value='passport') Passport
+                                                        option(value='driving') Driving License
+                                            .form-group.row
+                                                label#name_type_indentification.col-lg-2.col-form-label(for='val-phoneus', name='val-identifi-id')
+                                                    | Identification ID 
+                                                    span.text-danger *
+                                                .col-lg-10
+                                                    input#val-identyfi_id.form-control(type='text', name='val_identification_id', placeholder='C4547012')
+
+                                            .form-group.row
+                                                label#front_size.col-lg-2.col-form-label(for='val-currency')
+                                                    | Identity Card Front Side
+                                                    span.text-danger *
+                                            label.btn.btn-primary.custom-file-upload(for='file_front')
+                                                | Image front
+                                            input(type='file', name='image_front' id="file_front",style='margin-bottom: 20px;display:none;',accept=".jpg, .jpeg, .png")
+                                            .form-group.row
+                                                .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';')
+                                                    .uploadForm
+                                                        center
+                                                            img.divcenter.imagekyc()#image_front
+                                                                
+                                                .col-2.example
+                                                    .card
+                                                        .card-body
+                                                            label
+                                                                | Example =&gt;
+                                                .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                    .uploadForm
+                                                        center
+                                                            img#front_image.divcenter.imagekyc(src='/images/id_front.png')
+                                            .form-group.row
+                                                label#back_side.col-lg-2.col-form-label(for='val-currency')
+                                                    | Identity Card Back Sider
+                                                    span.text-danger *
+                                            label.btn.btn-primary.custom-file-upload(for='file_back')
+                                                | Image back
+                                            input(type='file', name='image_back' id="file_back",style='margin-bottom: 20px;display:none;',accept=".jpg, .jpeg, .png")
+                                            .form-group.row
+                                                .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';',for='file_back')
+                                                    .uploadForm
+                                                        center
+                                                            img.divcenter.imagekyc()#image_back
+
+                                                .col-2.example
+                                                    .card
+                                                        .card-body
+                                                            label
+                                                                | Example =&gt;
+                                                .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                    .uploadForm
+                                                        center
+                                                            img#back_image.divcenter.imagekyc(src='/images/id_back.png')
+                                            .form-group.row
+                                                label#selfie_image.col-lg-4.col-form-label(for='val-currency')
+                                                    | Selfie With Photo ID And Note
+                                                    span.text-danger *
+                                            label.btn.btn-primary.custom-file-upload(for='file_selfie')
+                                                | Image selfie
+                                            input(type='file', name='image_selfie' id="file_selfie",style='display:none;margin-bottom: 20px;',accept=".jpg, .jpeg, .png")
+                                            .form-group.row
+                                                .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';')
+                                                    .uploadForm
+                                                        center
+                                                            img.divcenter.imagekyc()#image_selfie
+                                                .col-2.example
+                                                    .card
+                                                        .card-body
+                                                            label
+                                                                | Example =&gt;
+                                                .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                    .uploadForm
+                                                        center
+                                                            img#selfie_image.divcenter.imagekyc(src='/images/pp_selfie_default.png')
+                                            .form-group.row
+                                                input.btn.btn-primary.divcenter(type='submit', value='Submit')
+                else
+                    if (data.status == 'Fail')
+                        - if (data.error.name) css_name = "border:1px solid red"
+                        - else css_name = ''
+                        - if (data.error.phone) css_phone = "border:1px solid red"
+                        - else css_phone = ''
+                        - if (data.error.national) css_national = "border:1px solid red"
+                        - else css_national = ''
+                        - if (data.error.identify_id) css_identify_id = "border:1px solid red"
+                        - else css_identify_id = ''
+                        - if (data.error.front_image) css_front_image = "border:1px solid red"
+                        - else css_front_image = ''
+                        - if (data.error.back_image) css_back_image = "border:1px solid red"
+                        - else css_back_image = ''
+                        - if (data.error.all_image) css_all_image = "border:1px solid red"
+                        - else css_all_image = ''
+                        - if (data.error.type) css_type = "border:1px solid red"
+                        - else css_type = ''
+                        .row.justify-content-center
+                            .col-lg-12
+                                .card
+                                    .card-body
+                                        .form-validation
+                                            form#submit_form.form-valide(action='/account/updatekyc',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-username')
+                                                        | First Name 
+                                                        span.text-danger *
+                                                    .col-lg-3
+                                                        input.form-control(type='text', name='kyc_id', placeholder='Enter a First Name',style = 'display:none',value=data.id)
+                                                        input#val_firstname.form-control(type='text', name='val_firstname', placeholder='Enter a First Name',style = css_name)
+                                                    label.col-lg-2.col-form-label(for='val-username')
+                                                        | Last Name
+                                                        span.text-danger *
+                                                    .col-lg-5
+                                                        input#val-lastname.form-control(type='text', name='val_lastname', placeholder='Enter a Last Name',style = css_name)
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-phoneus')
+                                                        | Phone Number 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        input#val-phoneus.form-control(type='text', name='val_phoneus', placeholder='+841659685663',value=data.phone,style = css_phone)
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-nationality')
+                                                        | Nationality
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        select#val-nationality.form-control(name='val_nationality',style = css_national disable)
+                                                            option(value='None') Select National
+                                                            option(value='afghan',selected =(data.national == 'afghan')) Afghan
+                                                            option(value='albanian',selected =(data.national == 'albanian')) Albanian
+                                                            option(value='algerian',selected =(data.national == 'algerian')) Algerian
+                                                            option(value='american',selected =(data.national == 'american')) American
+                                                            option(value='andorran',selected =(data.national == 'andorran')) Andorran
+                                                            option(value='angolan',selected =(data.national == 'angolan')) Angolan
+                                                            option(value='antiguans',selected =(data.national == 'antiguans')) Antiguans
+                                                            option(value='argentinean',selected =(data.national == 'argentinean')) Argentinean
+                                                            option(value='armenian',selected =(data.national == 'armenian')) Armenian
+                                                            option(value='australian',selected =(data.national == 'australian')) Australian
+                                                            option(value='austrian',selected =(data.national == 'austrian')) Austrian
+                                                            option(value='azerbaijani',selected =(data.national == 'azerbaijani')) Azerbaijani
+                                                            option(value='bahamian',selected =(data.national == 'bahamian')) Bahamian
+                                                            option(value='bahraini',selected =(data.national == 'bahraini')) Bahraini
+                                                            option(value='bangladeshi',selected =(data.national == 'bangladeshi')) Bangladeshi
+                                                            option(value='barbadian',selected =(data.national == 'barbadian')) Barbadian
+                                                            option(value='barbudans',selected =(data.national == 'barbudans')) Barbudans
+                                                            option(value='batswana',selected =(data.national == 'batswana')) Batswana
+                                                            option(value='belarusian',selected =(data.national == 'belarusian')) Belarusian
+                                                            option(value='belgian',selected =(data.national == 'belgian')) Belgian
+                                                            option(value='belizean',selected =(data.national == 'belizean')) Belizean
+                                                            option(value='beninese',selected =(data.national == 'beninese')) Beninese
+                                                            option(value='bhutanese',selected =(data.national == 'bhutanese')) Bhutanese
+                                                            option(value='bolivian',selected =(data.national == 'bolivian')) Bolivian
+                                                            option(value='bosnian',selected =(data.national == 'bosnian')) Bosnian
+                                                            option(value='brazilian',selected =(data.national == 'brazilian')) Brazilian
+                                                            option(value='british',selected =(data.national == 'british')) British
+                                                            option(value='bruneian',selected =(data.national == 'bruneian')) Bruneian
+                                                            option(value='bulgarian',selected =(data.national == 'bulgarian')) Bulgarian
+                                                            option(value='burkinabe',selected =(data.national == 'burkinabe')) Burkinabe
+                                                            option(value='burmese',selected =(data.national == 'burmese')) Burmese
+                                                            option(value='burundian',selected =(data.national == 'burundian')) Burundian
+                                                            option(value='cambodian',selected =(data.national == 'cambodian')) Cambodian
+                                                            option(value='cameroonian',selected =(data.national == 'cameroonian')) Cameroonian
+                                                            option(value='canadian',selected =(data.national == 'canadian')) Canadian
+                                                            option(value='cape verdean',selected =(data.national == 'cape verdean')) Cape Verdean
+                                                            option(value='central african',selected =(data.national == 'central african')) Central African
+                                                            option(value='chadian',selected =(data.national == 'chadian')) Chadian
+                                                            option(value='chilean',selected =(data.national == 'chilean')) Chilean
+                                                            option(value='chinese',selected =(data.national == 'chinese')) Chinese
+                                                            option(value='colombian',selected =(data.national == 'colombian')) Colombian
+                                                            option(value='comoran',selected =(data.national == 'comoran')) Comoran
+                                                            option(value='congolese',selected =(data.national == 'congolese')) Congolese
+                                                            option(value='costa rican',selected =(data.national == 'costa rican')) Costa Rican
+                                                            option(value='croatian',selected =(data.national == 'croatian')) Croatian
+                                                            option(value='cuban',selected =(data.national == 'cuban')) Cuban
+                                                            option(value='cypriot',selected =(data.national == 'cypriot')) Cypriot
+                                                            option(value='czech',selected =(data.national == 'czech')) Czech
+                                                            option(value='danish',selected =(data.national == 'danish')) Danish
+                                                            option(value='djibouti',selected =(data.national == 'djibouti')) Djibouti
+                                                            option(value='dominican',selected =(data.national == 'dominican')) Dominican
+                                                            option(value='dutch',selected =(data.national == 'dutch')) Dutch
+                                                            option(value='east timorese',selected =(data.national == 'east timorese')) East Timorese
+                                                            option(value='ecuadorean',selected =(data.national == 'ecuadorean')) Ecuadorean
+                                                            option(value='egyptian',selected =(data.national == 'egyptian')) Egyptian
+                                                            option(value='emirian',selected =(data.national == 'emirian')) Emirian
+                                                            option(value='equatorial guinean',selected =(data.national == 'equatorial guinean')) Equatorial Guinean
+                                                            option(value='eritrean',selected =(data.national == 'eritrean')) Eritrean
+                                                            option(value='estonian',selected =(data.national == 'estonian')) Estonian
+                                                            option(value='ethiopian',selected =(data.national == 'ethiopian')) Ethiopian
+                                                            option(value='fijian',selected =(data.national == 'fijian')) Fijian
+                                                            option(value='filipino',selected =(data.national == 'filipino')) Filipino
+                                                            option(value='finnish',selected =(data.national == 'finnish')) Finnish
+                                                            option(value='french',selected =(data.national == 'french')) French
+                                                            option(value='gabonese',selected =(data.national == 'gabonese')) Gabonese
+                                                            option(value='gambian',selected =(data.national == 'gambian')) Gambian
+                                                            option(value='georgian',selected =(data.national == 'georgian')) Georgian
+                                                            option(value='german',selected =(data.national == 'german')) German
+                                                            option(value='ghanaian',selected =(data.national == 'ghanaian')) Ghanaian
+                                                            option(value='greek',selected =(data.national == 'greek')) Greek
+                                                            option(value='grenadian',selected =(data.national == 'grenadian')) Grenadian
+                                                            option(value='guatemalan',selected =(data.national == 'guatemalan')) Guatemalan
+                                                            option(value='guinea-bissauan',selected =(data.national == 'guinea-bissauan')) Guinea-Bissauan
+                                                            option(value='guinean',selected =(data.national == 'guinean')) Guinean
+                                                            option(value='guyanese',selected =(data.national == 'guyanese')) Guyanese
+                                                            option(value='haitian',selected =(data.national == 'haitian')) Haitian
+                                                            option(value='herzegovinian',selected =(data.national == 'herzegovinian')) Herzegovinian
+                                                            option(value='honduran',selected =(data.national == 'honduran')) Honduran
+                                                            option(value='hungarian',selected =(data.national == 'hungarian')) Hungarian
+                                                            option(value='icelander',selected =(data.national == 'icelander')) Icelander
+                                                            option(value='indian',selected =(data.national == 'indian')) Indian
+                                                            option(value='indonesian',selected =(data.national == 'indonesian')) Indonesian
+                                                            option(value='iranian',selected =(data.national == 'iranian')) Iranian
+                                                            option(value='iraqi',selected =(data.national == 'iraqi')) Iraqi
+                                                            option(value='irish',selected =(data.national == 'irish')) Irish
+                                                            option(value='israeli',selected =(data.national == 'israeli')) Israeli
+                                                            option(value='italian',selected =(data.national == 'italian')) Italian
+                                                            option(value='ivorian',selected =(data.national == 'ivorian')) Ivorian
+                                                            option(value='jamaican',selected =(data.national == 'jamaican')) Jamaican
+                                                            option(value='japanese',selected =(data.national == 'japanese')) Japanese
+                                                            option(value='jordanian',selected =(data.national == 'jordanian')) Jordanian
+                                                            option(value='kazakhstani',selected =(data.national == 'kazakhstani')) Kazakhstani
+                                                            option(value='kenyan',selected =(data.national == 'kenyan')) Kenyan
+                                                            option(value='kittian and nevisian',selected =(data.national == 'kittian and nevisian')) Kittian and Nevisian
+                                                            option(value='kuwaiti',selected =(data.national == 'kuwaiti')) Kuwaiti
+                                                            option(value='kyrgyz',selected =(data.national == 'kyrgyz')) Kyrgyz
+                                                            option(value='laotian',selected =(data.national == 'laotian')) Laotian
+                                                            option(value='latvian',selected =(data.national == 'latvian')) Latvian
+                                                            option(value='lebanese',selected =(data.national == 'lebanese')) Lebanese
+                                                            option(value='liberian',selected =(data.national == 'liberian')) Liberian
+                                                            option(value='libyan',selected =(data.national == 'libyan')) Libyan
+                                                            option(value='liechtensteiner',selected =(data.national == 'liechtensteiner')) Liechtensteiner
+                                                            option(value='lithuanian',selected =(data.national == 'lithuanian')) Lithuanian
+                                                            option(value='luxembourger',selected =(data.national == 'luxembourger')) Luxembourger
+                                                            option(value='macedonian',selected =(data.national == 'macedonian')) Macedonian
+                                                            option(value='malagasy',selected =(data.national == 'malagasy')) Malagasy
+                                                            option(value='malawian',selected =(data.national == 'malawian')) Malawian
+                                                            option(value='malaysian',selected =(data.national == 'malaysian')) Malaysian
+                                                            option(value='maldivan',selected =(data.national == 'maldivan')) Maldivan
+                                                            option(value='malian',selected =(data.national == 'malian')) Malian
+                                                            option(value='maltese',selected =(data.national == 'maltese')) Maltese
+                                                            option(value='marshallese',selected =(data.national == 'marshallese')) Marshallese
+                                                            option(value='mauritanian',selected =(data.national == 'mauritanian')) Mauritanian
+                                                            option(value='mauritian',selected =(data.national == 'mauritian')) Mauritian
+                                                            option(value='mexican',selected =(data.national == 'mexican')) Mexican
+                                                            option(value='micronesian',selected =(data.national == 'micronesian')) Micronesian
+                                                            option(value='moldovan',selected =(data.national == 'moldovan')) Moldovan
+                                                            option(value='monacan',selected =(data.national == 'monacan')) Monacan
+                                                            option(value='mongolian',selected =(data.national == 'mongolian')) Mongolian
+                                                            option(value='moroccan',selected =(data.national == 'moroccan')) Moroccan
+                                                            option(value='mosotho',selected =(data.national == 'mosotho')) Mosotho
+                                                            option(value='motswana',selected =(data.national == 'motswana')) Motswana
+                                                            option(value='mozambican',selected =(data.national == 'mozambican')) Mozambican
+                                                            option(value='namibian',selected =(data.national == 'namibian')) Namibian
+                                                            option(value='nauruan',selected =(data.national == 'nauruan')) Nauruan
+                                                            option(value='nepalese',selected =(data.national == 'nepalese')) Nepalese
+                                                            option(value='new zealander',selected =(data.national == 'new zealander')) New Zealander
+                                                            option(value='ni-vanuatu',selected =(data.national == 'ni-vanuatu')) Ni-Vanuatu
+                                                            option(value='nicaraguan',selected =(data.national == 'nicaraguan')) Nicaraguan
+                                                            option(value='nigerien',selected =(data.national == 'nigerien')) Nigerien
+                                                            option(value='north korean',selected =(data.national == 'north korean')) North Korean
+                                                            option(value='northern irish',selected =(data.national == 'northern irish')) Northern Irish
+                                                            option(value='norwegian',selected =(data.national == 'norwegian')) Norwegian
+                                                            option(value='omani',selected =(data.national == 'omani')) Omani
+                                                            option(value='pakistani',selected =(data.national == 'pakistani')) Pakistani
+                                                            option(value='palauan',selected =(data.national == 'palauan')) Palauan
+                                                            option(value='panamanian',selected =(data.national == 'panamanian')) Panamanian
+                                                            option(value='papua new guinean',selected =(data.national == 'papua new guinean')) Papua New Guinean
+                                                            option(value='paraguayan',selected =(data.national == 'paraguayan')) Paraguayan
+                                                            option(value='peruvian',selected =(data.national == 'peruvian')) Peruvian
+                                                            option(value='polish',selected =(data.national == 'polish')) Polish
+                                                            option(value='portuguese',selected =(data.national == 'portuguese')) Portuguese
+                                                            option(value='qatari',selected =(data.national == 'qatari')) Qatari
+                                                            option(value='romanian',selected =(data.national == 'romanian')) Romanian
+                                                            option(value='russian',selected =(data.national == 'russian')) Russian
+                                                            option(value='rwandan',selected =(data.national == 'rwandan')) Rwandan
+                                                            option(value='saint lucian',selected =(data.national == 'saint lucian')) Saint Lucian
+                                                            option(value='salvadoran',selected =(data.national == 'salvadoran')) Salvadoran
+                                                            option(value='samoan',selected =(data.national == 'samoan')) Samoan
+                                                            option(value='san marinese',selected =(data.national == 'san marinese')) San Marinese
+                                                            option(value='sao tomean',selected =(data.national == 'sao tomean')) Sao Tomean
+                                                            option(value='saudi',selected =(data.national == 'saudi')) Saudi
+                                                            option(value='scottish',selected =(data.national == 'scottish')) Scottish
+                                                            option(value='senegalese',selected =(data.national == 'senegalese')) Senegalese
+                                                            option(value='serbian',selected =(data.national == 'serbian')) Serbian
+                                                            option(value='seychellois',selected =(data.national == 'seychellois')) Seychellois
+                                                            option(value='sierra leonean',selected =(data.national == 'sierra leonean')) Sierra Leonean
+                                                            option(value='singaporean',selected =(data.national == 'singaporean')) Singaporean
+                                                            option(value='slovakian',selected =(data.national == 'slovakian')) Slovakian
+                                        
+                                                            option(value='solomon islander',selected =(data.national == 'solomon islander')) Solomon Islander
+                                                            option(value='somali',selected =(data.national == 'somali')) Somali
+                                                            option(value='south african',selected =(data.national == 'south african')) South African
+                                                            option(value='south korean',selected =(data.national == 'south korean')) South Korean
+                                                            option(value='spanish',selected =(data.national == 'spanish')) Spanish
+                                                            option(value='sri lankan',selected =(data.national == 'sri lankan')) Sri Lankan
+                                                            option(value='sudanese',selected =(data.national == 'sudanese')) Sudanese
+                                                            option(value='surinamer',selected =(data.national == 'surinamer')) Surinamer
+                                                            option(value='swazi',selected =(data.national == 'swazi')) Swazi
+                                                            option(value='swedish',selected =(data.national == 'swedish')) Swedish
+                                                            option(value='swiss',selected =(data.national == 'swiss')) Swiss
+                                                            option(value='syrian',selected =(data.national == 'syrian')) Syrian
+                                                            option(value='taiwanese',selected =(data.national == 'taiwanese')) Taiwanese
+                                                            option(value='tajik',selected =(data.national == 'tajik')) Tajik
+                                                            option(value='tanzanian',selected =(data.national == 'tanzanian')) Tanzanian
+                                                            option(value='thai',selected =(data.national == 'thai')) Thai
+                                                            option(value='togolese',selected =(data.national == 'togolese')) Togolese
+                                                            option(value='tongan',selected =(data.national == 'tongan')) Tongan
+                                                            option(value='trinidadian or tobagonian',selected =(data.national == 'trinidadian or tobagonian')) Trinidadian or Tobagonian
+                                                            option(value='tunisian',selected =(data.national == 'tunisian')) Tunisian
+                                                            option(value='turkish',selected =(data.national == 'turkish')) Turkish
+                                                            option(value='tuvaluan',selected =(data.national == 'tuvaluan')) Tuvaluan
+                                                            option(value='ugandan',selected =(data.national == 'ugandan')) Ugandan
+                                                            option(value='ukrainian',selected =(data.national == 'ukrainian')) Ukrainian
+                                                            option(value='uruguayan',selected =(data.national == 'uruguayan')) Uruguayan
+                                                            option(value='uzbekistani',selected =(data.national == 'uzbekistani')) Uzbekistani
+                                                            option(value='venezuelan',selected =(data.national == 'venezuelan')) Venezuelan
+                                                            option(value='vietnamese',selected =(data.national == 'vietnamese')) Vietnamese
+                                                            option(value='welsh',selected =(data.national == 'welsh')) Welsh
+                                                            option(value='yemenite',selected =(data.national == 'yemenite')) Yemenite
+                                                            option(value='zambian',selected =(data.national == 'zambian')) Zambian
+                                                            option(value='zimbabwean',selected =(data.national == 'afghzimbabweanan')) Zimbabwean
+
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-suggestions')
+                                                        | Identification Type 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        select#val_identification.form-control(name='val_identification_type',onchange='setIndentify()' ,style = css_type)
+                                                            option(value='identify_cart') Please select
+                                                            option(value='identify_cart',selected =(data.type == '1') ) Identity Card
+                                                            option(value='passport',selected =(data.type == '2')) Passport
+                                                            option(value='driving',selected =(data.type == '3')) Driving License
+                                                .form-group.row
+                                                    label#name_type_indentification.col-lg-2.col-form-label(for='val-phoneus', name='val-identifi-id')
+                                                        | Identification ID 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        input#val-identyfi_id.form-control(type='text', name='val_identification_id', placeholder='C4547012',value=data.passport_number_id ,style = css_identify_id)
+
+                                                .form-group.row
+                                                    label#front_size.col-lg-2.col-form-label(for='val-currency')
+                                                        | Identity Card Front Side
+                                                        span.text-danger *
+                                                label.btn.btn-primary.custom-file-upload(for='file_front')
+                                                    |   Image front
+                                                input(type='file', name='image_front' id="file_front",style='display:none;margin-bottom: 20px;',accept=".jpg, .jpeg, .png")
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';'+css_front_image)
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_back)#image_front
+                                                                    
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm
+                                                            center
+                                                                if(data.type == '1')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/id_front.png')
+                                                                if(data.type == '2')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/pp_frist_page.png')
+                                                                if(data.type == '3')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/driver1.png')
+                                                .form-group.row
+                                                    label#back_side.col-lg-2.col-form-label(for='val-currency')
+                                                        | Identity Card Back Sider
+                                                        span.text-danger *
+                                                label.btn.btn-primary.custom-file-upload(for='file_back')
+                                                    | Image back
+                                                input(type='file', name='image_back' id="file_back",style='display:none;margin-bottom: 20px;',accept=".jpg, .jpeg, .png")
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=css_back_image,for='file_back')
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_behind)#image_back
+
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm
+                                                            center
+                                                                if(data.type == '1')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/id_back.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                                if(data.type == '2')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/pp_cover.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                                if(data.type == '3')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/driver2.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                                
+                                                .form-group.row
+                                                    label#selfie_image.col-lg-4.col-form-label(for='val-currency')
+                                                        | Selfie With Photo ID And Note
+                                                        span.text-danger *
+                                                label.btn.btn-primary.custom-file-upload(for='file_selfie')
+                                                    | Image Selfie
+                                                input(type='file', name='image_selfie' id="file_selfie",style='margin-bottom: 20px;display:none',accept=".jpg, .jpeg, .png")
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';'+ css_all_image)
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_all)#image_selfie
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm(ref='uploadForm', style='padding: 35px 0px;')
+                                                            center
+                                                                img#selfie_image.divcenter.imagekyc(src='/images/pp_selfie_default.png')
+                                
+                                                .form-group.row
+                                                    input.btn.btn-primary.divcenter(type='submit',style="margin:0 39vw",value='Update')
+                    else
+                        .row.justify-content-center
+                            .col-lg-12
+                                .card
+                                    .card-body
+                                        .form-validation
+                                            form#submit_form.form-valide(method="post",accept-charset="utf-8",encType="multipart/form-data")
+                                                
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-username')
+                                                        | Full Name
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        input#val_firstname.form-control(type='text', name='val_firstname', placeholder='Enter a First Name',value= data.name,disabled="disabled")
+                                                    
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-phoneus')
+                                                        | Phone Number 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        input#val-phoneus.form-control(type='text', name='val_phoneus', placeholder='+841659685663',value=data.phone,disabled="disabled")
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-nationality')
+                                                        | Nationality
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        select#val-nationality.form-control(name='val_nationality',disabled="disabled")
+                                                            option(value='None') Select National
+                                                            option(value='afghan',selected =(data.national == 'afghan')) Afghan
+                                                            option(value='albanian',selected =(data.national == 'albanian')) Albanian
+                                                            option(value='algerian',selected =(data.national == 'algerian')) Algerian
+                                                            option(value='american',selected =(data.national == 'american')) American
+                                                            option(value='andorran',selected =(data.national == 'andorran')) Andorran
+                                                            option(value='angolan',selected =(data.national == 'angolan')) Angolan
+                                                            option(value='antiguans',selected =(data.national == 'antiguans')) Antiguans
+                                                            option(value='argentinean',selected =(data.national == 'argentinean')) Argentinean
+                                                            option(value='armenian',selected =(data.national == 'armenian')) Armenian
+                                                            option(value='australian',selected =(data.national == 'australian')) Australian
+                                                            option(value='austrian',selected =(data.national == 'austrian')) Austrian
+                                                            option(value='azerbaijani',selected =(data.national == 'azerbaijani')) Azerbaijani
+                                                            option(value='bahamian',selected =(data.national == 'bahamian')) Bahamian
+                                                            option(value='bahraini',selected =(data.national == 'bahraini')) Bahraini
+                                                            option(value='bangladeshi',selected =(data.national == 'bangladeshi')) Bangladeshi
+                                                            option(value='barbadian',selected =(data.national == 'barbadian')) Barbadian
+                                                            option(value='barbudans',selected =(data.national == 'barbudans')) Barbudans
+                                                            option(value='batswana',selected =(data.national == 'batswana')) Batswana
+                                                            option(value='belarusian',selected =(data.national == 'belarusian')) Belarusian
+                                                            option(value='belgian',selected =(data.national == 'belgian')) Belgian
+                                                            option(value='belizean',selected =(data.national == 'belizean')) Belizean
+                                                            option(value='beninese',selected =(data.national == 'beninese')) Beninese
+                                                            option(value='bhutanese',selected =(data.national == 'bhutanese')) Bhutanese
+                                                            option(value='bolivian',selected =(data.national == 'bolivian')) Bolivian
+                                                            option(value='bosnian',selected =(data.national == 'bosnian')) Bosnian
+                                                            option(value='brazilian',selected =(data.national == 'brazilian')) Brazilian
+                                                            option(value='british',selected =(data.national == 'british')) British
+                                                            option(value='bruneian',selected =(data.national == 'bruneian')) Bruneian
+                                                            option(value='bulgarian',selected =(data.national == 'bulgarian')) Bulgarian
+                                                            option(value='burkinabe',selected =(data.national == 'burkinabe')) Burkinabe
+                                                            option(value='burmese',selected =(data.national == 'burmese')) Burmese
+                                                            option(value='burundian',selected =(data.national == 'burundian')) Burundian
+                                                            option(value='cambodian',selected =(data.national == 'cambodian')) Cambodian
+                                                            option(value='cameroonian',selected =(data.national == 'cameroonian')) Cameroonian
+                                                            option(value='canadian',selected =(data.national == 'canadian')) Canadian
+                                                            option(value='cape verdean',selected =(data.national == 'cape verdean')) Cape Verdean
+                                                            option(value='central african',selected =(data.national == 'central african')) Central African
+                                                            option(value='chadian',selected =(data.national == 'chadian')) Chadian
+                                                            option(value='chilean',selected =(data.national == 'chilean')) Chilean
+                                                            option(value='chinese',selected =(data.national == 'chinese')) Chinese
+                                                            option(value='colombian',selected =(data.national == 'colombian')) Colombian
+                                                            option(value='comoran',selected =(data.national == 'comoran')) Comoran
+                                                            option(value='congolese',selected =(data.national == 'congolese')) Congolese
+                                                            option(value='costa rican',selected =(data.national == 'costa rican')) Costa Rican
+                                                            option(value='croatian',selected =(data.national == 'croatian')) Croatian
+                                                            option(value='cuban',selected =(data.national == 'cuban')) Cuban
+                                                            option(value='cypriot',selected =(data.national == 'cypriot')) Cypriot
+                                                            option(value='czech',selected =(data.national == 'czech')) Czech
+                                                            option(value='danish',selected =(data.national == 'danish')) Danish
+                                                            option(value='djibouti',selected =(data.national == 'djibouti')) Djibouti
+                                                            option(value='dominican',selected =(data.national == 'dominican')) Dominican
+                                                            option(value='dutch',selected =(data.national == 'dutch')) Dutch
+                                                            option(value='east timorese',selected =(data.national == 'east timorese')) East Timorese
+                                                            option(value='ecuadorean',selected =(data.national == 'ecuadorean')) Ecuadorean
+                                                            option(value='egyptian',selected =(data.national == 'egyptian')) Egyptian
+                                                            option(value='emirian',selected =(data.national == 'emirian')) Emirian
+                                                            option(value='equatorial guinean',selected =(data.national == 'equatorial guinean')) Equatorial Guinean
+                                                            option(value='eritrean',selected =(data.national == 'eritrean')) Eritrean
+                                                            option(value='estonian',selected =(data.national == 'estonian')) Estonian
+                                                            option(value='ethiopian',selected =(data.national == 'ethiopian')) Ethiopian
+                                                            option(value='fijian',selected =(data.national == 'fijian')) Fijian
+                                                            option(value='filipino',selected =(data.national == 'filipino')) Filipino
+                                                            option(value='finnish',selected =(data.national == 'finnish')) Finnish
+                                                            option(value='french',selected =(data.national == 'french')) French
+                                                            option(value='gabonese',selected =(data.national == 'gabonese')) Gabonese
+                                                            option(value='gambian',selected =(data.national == 'gambian')) Gambian
+                                                            option(value='georgian',selected =(data.national == 'georgian')) Georgian
+                                                            option(value='german',selected =(data.national == 'german')) German
+                                                            option(value='ghanaian',selected =(data.national == 'ghanaian')) Ghanaian
+                                                            option(value='greek',selected =(data.national == 'greek')) Greek
+                                                            option(value='grenadian',selected =(data.national == 'grenadian')) Grenadian
+                                                            option(value='guatemalan',selected =(data.national == 'guatemalan')) Guatemalan
+                                                            option(value='guinea-bissauan',selected =(data.national == 'guinea-bissauan')) Guinea-Bissauan
+                                                            option(value='guinean',selected =(data.national == 'guinean')) Guinean
+                                                            option(value='guyanese',selected =(data.national == 'guyanese')) Guyanese
+                                                            option(value='haitian',selected =(data.national == 'haitian')) Haitian
+                                                            option(value='herzegovinian',selected =(data.national == 'herzegovinian')) Herzegovinian
+                                                            option(value='honduran',selected =(data.national == 'honduran')) Honduran
+                                                            option(value='hungarian',selected =(data.national == 'hungarian')) Hungarian
+                                                            option(value='icelander',selected =(data.national == 'icelander')) Icelander
+                                                            option(value='indian',selected =(data.national == 'indian')) Indian
+                                                            option(value='indonesian',selected =(data.national == 'indonesian')) Indonesian
+                                                            option(value='iranian',selected =(data.national == 'iranian')) Iranian
+                                                            option(value='iraqi',selected =(data.national == 'iraqi')) Iraqi
+                                                            option(value='irish',selected =(data.national == 'irish')) Irish
+                                                            option(value='israeli',selected =(data.national == 'israeli')) Israeli
+                                                            option(value='italian',selected =(data.national == 'italian')) Italian
+                                                            option(value='ivorian',selected =(data.national == 'ivorian')) Ivorian
+                                                            option(value='jamaican',selected =(data.national == 'jamaican')) Jamaican
+                                                            option(value='japanese',selected =(data.national == 'japanese')) Japanese
+                                                            option(value='jordanian',selected =(data.national == 'jordanian')) Jordanian
+                                                            option(value='kazakhstani',selected =(data.national == 'kazakhstani')) Kazakhstani
+                                                            option(value='kenyan',selected =(data.national == 'kenyan')) Kenyan
+                                                            option(value='kittian and nevisian',selected =(data.national == 'kittian and nevisian')) Kittian and Nevisian
+                                                            option(value='kuwaiti',selected =(data.national == 'kuwaiti')) Kuwaiti
+                                                            option(value='kyrgyz',selected =(data.national == 'kyrgyz')) Kyrgyz
+                                                            option(value='laotian',selected =(data.national == 'laotian')) Laotian
+                                                            option(value='latvian',selected =(data.national == 'latvian')) Latvian
+                                                            option(value='lebanese',selected =(data.national == 'lebanese')) Lebanese
+                                                            option(value='liberian',selected =(data.national == 'liberian')) Liberian
+                                                            option(value='libyan',selected =(data.national == 'libyan')) Libyan
+                                                            option(value='liechtensteiner',selected =(data.national == 'liechtensteiner')) Liechtensteiner
+                                                            option(value='lithuanian',selected =(data.national == 'lithuanian')) Lithuanian
+                                                            option(value='luxembourger',selected =(data.national == 'luxembourger')) Luxembourger
+                                                            option(value='macedonian',selected =(data.national == 'macedonian')) Macedonian
+                                                            option(value='malagasy',selected =(data.national == 'malagasy')) Malagasy
+                                                            option(value='malawian',selected =(data.national == 'malawian')) Malawian
+                                                            option(value='malaysian',selected =(data.national == 'malaysian')) Malaysian
+                                                            option(value='maldivan',selected =(data.national == 'maldivan')) Maldivan
+                                                            option(value='malian',selected =(data.national == 'malian')) Malian
+                                                            option(value='maltese',selected =(data.national == 'maltese')) Maltese
+                                                            option(value='marshallese',selected =(data.national == 'marshallese')) Marshallese
+                                                            option(value='mauritanian',selected =(data.national == 'mauritanian')) Mauritanian
+                                                            option(value='mauritian',selected =(data.national == 'mauritian')) Mauritian
+                                                            option(value='mexican',selected =(data.national == 'mexican')) Mexican
+                                                            option(value='micronesian',selected =(data.national == 'micronesian')) Micronesian
+                                                            option(value='moldovan',selected =(data.national == 'moldovan')) Moldovan
+                                                            option(value='monacan',selected =(data.national == 'monacan')) Monacan
+                                                            option(value='mongolian',selected =(data.national == 'mongolian')) Mongolian
+                                                            option(value='moroccan',selected =(data.national == 'moroccan')) Moroccan
+                                                            option(value='mosotho',selected =(data.national == 'mosotho')) Mosotho
+                                                            option(value='motswana',selected =(data.national == 'motswana')) Motswana
+                                                            option(value='mozambican',selected =(data.national == 'mozambican')) Mozambican
+                                                            option(value='namibian',selected =(data.national == 'namibian')) Namibian
+                                                            option(value='nauruan',selected =(data.national == 'nauruan')) Nauruan
+                                                            option(value='nepalese',selected =(data.national == 'nepalese')) Nepalese
+                                                            option(value='new zealander',selected =(data.national == 'new zealander')) New Zealander
+                                                            option(value='ni-vanuatu',selected =(data.national == 'ni-vanuatu')) Ni-Vanuatu
+                                                            option(value='nicaraguan',selected =(data.national == 'nicaraguan')) Nicaraguan
+                                                            option(value='nigerien',selected =(data.national == 'nigerien')) Nigerien
+                                                            option(value='north korean',selected =(data.national == 'north korean')) North Korean
+                                                            option(value='northern irish',selected =(data.national == 'northern irish')) Northern Irish
+                                                            option(value='norwegian',selected =(data.national == 'norwegian')) Norwegian
+                                                            option(value='omani',selected =(data.national == 'omani')) Omani
+                                                            option(value='pakistani',selected =(data.national == 'pakistani')) Pakistani
+                                                            option(value='palauan',selected =(data.national == 'palauan')) Palauan
+                                                            option(value='panamanian',selected =(data.national == 'panamanian')) Panamanian
+                                                            option(value='papua new guinean',selected =(data.national == 'papua new guinean')) Papua New Guinean
+                                                            option(value='paraguayan',selected =(data.national == 'paraguayan')) Paraguayan
+                                                            option(value='peruvian',selected =(data.national == 'peruvian')) Peruvian
+                                                            option(value='polish',selected =(data.national == 'polish')) Polish
+                                                            option(value='portuguese',selected =(data.national == 'portuguese')) Portuguese
+                                                            option(value='qatari',selected =(data.national == 'qatari')) Qatari
+                                                            option(value='romanian',selected =(data.national == 'romanian')) Romanian
+                                                            option(value='russian',selected =(data.national == 'russian')) Russian
+                                                            option(value='rwandan',selected =(data.national == 'rwandan')) Rwandan
+                                                            option(value='saint lucian',selected =(data.national == 'saint lucian')) Saint Lucian
+                                                            option(value='salvadoran',selected =(data.national == 'salvadoran')) Salvadoran
+                                                            option(value='samoan',selected =(data.national == 'samoan')) Samoan
+                                                            option(value='san marinese',selected =(data.national == 'san marinese')) San Marinese
+                                                            option(value='sao tomean',selected =(data.national == 'sao tomean')) Sao Tomean
+                                                            option(value='saudi',selected =(data.national == 'saudi')) Saudi
+                                                            option(value='scottish',selected =(data.national == 'scottish')) Scottish
+                                                            option(value='senegalese',selected =(data.national == 'senegalese')) Senegalese
+                                                            option(value='serbian',selected =(data.national == 'serbian')) Serbian
+                                                            option(value='seychellois',selected =(data.national == 'seychellois')) Seychellois
+                                                            option(value='sierra leonean',selected =(data.national == 'sierra leonean')) Sierra Leonean
+                                                            option(value='singaporean',selected =(data.national == 'singaporean')) Singaporean
+                                                            option(value='slovakian',selected =(data.national == 'slovakian')) Slovakian
+                                        
+                                                            option(value='solomon islander',selected =(data.national == 'solomon islander')) Solomon Islander
+                                                            option(value='somali',selected =(data.national == 'somali')) Somali
+                                                            option(value='south african',selected =(data.national == 'south african')) South African
+                                                            option(value='south korean',selected =(data.national == 'south korean')) South Korean
+                                                            option(value='spanish',selected =(data.national == 'spanish')) Spanish
+                                                            option(value='sri lankan',selected =(data.national == 'sri lankan')) Sri Lankan
+                                                            option(value='sudanese',selected =(data.national == 'sudanese')) Sudanese
+                                                            option(value='surinamer',selected =(data.national == 'surinamer')) Surinamer
+                                                            option(value='swazi',selected =(data.national == 'swazi')) Swazi
+                                                            option(value='swedish',selected =(data.national == 'swedish')) Swedish
+                                                            option(value='swiss',selected =(data.national == 'swiss')) Swiss
+                                                            option(value='syrian',selected =(data.national == 'syrian')) Syrian
+                                                            option(value='taiwanese',selected =(data.national == 'taiwanese')) Taiwanese
+                                                            option(value='tajik',selected =(data.national == 'tajik')) Tajik
+                                                            option(value='tanzanian',selected =(data.national == 'tanzanian')) Tanzanian
+                                                            option(value='thai',selected =(data.national == 'thai')) Thai
+                                                            option(value='togolese',selected =(data.national == 'togolese')) Togolese
+                                                            option(value='tongan',selected =(data.national == 'tongan')) Tongan
+                                                            option(value='trinidadian or tobagonian',selected =(data.national == 'trinidadian or tobagonian')) Trinidadian or Tobagonian
+                                                            option(value='tunisian',selected =(data.national == 'tunisian')) Tunisian
+                                                            option(value='turkish',selected =(data.national == 'turkish')) Turkish
+                                                            option(value='tuvaluan',selected =(data.national == 'tuvaluan')) Tuvaluan
+                                                            option(value='ugandan',selected =(data.national == 'ugandan')) Ugandan
+                                                            option(value='ukrainian',selected =(data.national == 'ukrainian')) Ukrainian
+                                                            option(value='uruguayan',selected =(data.national == 'uruguayan')) Uruguayan
+                                                            option(value='uzbekistani',selected =(data.national == 'uzbekistani')) Uzbekistani
+                                                            option(value='venezuelan',selected =(data.national == 'venezuelan')) Venezuelan
+                                                            option(value='vietnamese',selected =(data.national == 'vietnamese')) Vietnamese
+                                                            option(value='welsh',selected =(data.national == 'welsh')) Welsh
+                                                            option(value='yemenite',selected =(data.national == 'yemenite')) Yemenite
+                                                            option(value='zambian',selected =(data.national == 'zambian')) Zambian
+                                                            option(value='zimbabwean',selected =(data.national == 'afghzimbabweanan')) Zimbabwean
+
+                                                .form-group.row
+                                                    label.col-lg-2.col-form-label(for='val-suggestions')
+                                                        | Identification Type 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        select#val_identification.form-control(name='val_identification_type',onchange='setIndentify()',disabled="disabled")
+                                                            option(value='identify_cart') Please select
+                                                            option(value='identify_cart',selected =(data.type == '1') ) Identity Card
+                                                            option(value='passport',selected =(data.type == '2')) Passport
+                                                            option(value='driving',selected =(data.type == '3')) Driving License
+                                                .form-group.row
+                                                    label#name_type_indentification.col-lg-2.col-form-label(for='val-phoneus', name='val-identifi-id')
+                                                        | Identification ID 
+                                                        span.text-danger *
+                                                    .col-lg-10
+                                                        input#val-identyfi_id.form-control(type='text', name='val_identification_id', placeholder='C4547012',value=data.passport_number_id,disabled="disabled")
+
+                                                .form-group.row
+                                                    label#front_size.col-lg-2.col-form-label(for='val-currency')
+                                                        | Identity Card Front Side
+                                                        span.text-danger *
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';')
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_back)#image_front
+                                                                    
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm
+                                                            center
+                                                                if(data.type == '1')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/id_front.png')
+                                                                if(data.type == '2')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/pp_frist_page.png')
+                                                                if(data.type == '3')
+                                                                    img#front_image.divcenter.imagekyc(src='/images/driver1.png')
+                                                .form-group.row
+                                                    label#back_side.col-lg-2.col-form-label(for='val-currency')
+                                                        | Identity Card Back Sider
+                                                        span.text-danger *
+                                            
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';')
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_behind)#image_back
+
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm
+                                                            center
+                                                                if(data.type == '1')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/id_back.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                                if(data.type == '2')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/pp_cover.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                                if(data.type == '3')
+                                                                    img#back_image.divcenter.imagekyc(src='/images/driver2.png', style='vertical-align: middle;margin: 5vh 11vh; max-height:80%')
+                                                .form-group.row
+                                                    label#selfie_image.col-lg-4.col-form-label(for='val-currency')
+                                                        | Selfie With Photo ID And Note
+                                                        span.text-danger *
+                                        
+                                                
+                                                .form-group.row
+                                                    .col-5.dropzone.dropresponsive.dz-clickable.dz-started.dropzone_notext(style=';')
+                                                        .uploadForm
+                                                            center
+                                                                img.divcenter.imagekyc(src='/uploads/'+data.url_img_all)#image_selfie
+                                                    .col-2.example
+                                                        .card
+                                                            .card-body
+                                                                label
+                                                                    | Example =&gt;
+                                                    .col-5.dropzone.dropresponsive(style=';pointer-events: none;cursor: default;')
+                                                        .uploadForm
+                                                            center
+                                                                img#selfie_image.divcenter.imagekyc(src='/images/pp_selfie_default.png')
+                                                
+                    
+    script(src="/javascript/dashboard/kyc.js")
+
+

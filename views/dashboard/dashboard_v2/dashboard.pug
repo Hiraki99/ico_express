@@ -1,0 +1,112 @@
+extends ../../layout_dashboard
+block content_dashboard
+    link(href='/main/scss/mycss/progress-cycle.css', rel='stylesheet')
+
+    link(rel='stylesheet', href='/assets/css/form.css')
+    link(rel='stylesheet', href='/assets/plugins/magnific/magnific-popup.css')
+    link(href='/css/my-style.css', rel='stylesheet')
+
+    
+
+    .row
+        .col-12
+            //- content
+            .card
+                center#loading-body
+                    img(src='/images/loading.gif',height='80',width='80',name='loading')
+                .card-body#dashboard-body(style="display:none")
+                    
+                    .row    
+                        .col-12
+                            //- wallet
+                            center
+                                .row
+                                    .col-lg-10.offset-lg-1.col-md-12.col-sm-12.col-xs-12
+                                        .row
+                                            .col-lg-3.offset-lg-1.col-md-12.col-sm-12.col-xs-12
+                                                p(style='font-size: 25px;margin-top:5px;white-space: nowrap;') Wallet Address: 
+                                            .col-lg-7.col-md-12.col-sm-12.col-xs-12.input-group.input-group-default#wallet-address-2   
+                                                input#wallet-address.btn.form-control.border-input.text-muted(readonly,value='',data-clipboard-target='#link',alt='Copy to clipboard',style='padding-right:5px;padding-left:5px;margin:5px;margin-left:10px; width:auto',onclick='copyClipboard(0)')
+                                                img(src='/assets/icon/qr.png', style='margin-top:10px' height='30',width='30',type='button', data-toggle='modal',onclick="myfunction(this)") 
+                    .row#event-infor(style='margin-top:10px')  
+                        .col-12(style='margin-bottom:0')
+                            center#title
+                                //- h1(style='margin:30px;') TOKEN SALE IS COMMING
+                            center#infor-ico         
+                                center
+                                    img#loading-infor-ico(src='/images/loading.gif',height='80',width='80',name='loading')
+                        .col-lg-6.offset-lg-3.col-md-12.col-sm-12.col-xs-12
+                            .meter.red#processing-buy-token
+                                //- span#cur3(style='width: 10%;margin-top:40px;font-size:25px;color:white;overfloat:;white-space: nowrap;') 30%
+                                span.cur#cur2(style='width: 0;disable:none')
+                                    span#cur3(style='margin-top:20px;font-size:15px;color:white;white-space: nowrap;') 0
+                    .row(style='margin:40px 0 50px 0;border:1px')#buy-token    
+                        .col-lg-3.offset-lg-3.col-md-4.offset-md-2.col-sm-12.col-xs-12
+                            button.btn.btn-flat.btn-light(style='width:100%;height:50px;margin:5px') Buy Token Lock     
+                        .col-lg-3.col-md-4.col-sm-12.col-xs-12
+                            button.btn.btn-flat.btn-light(style='width:100%;height:50px;margin:5px') Buy Token Unlock
+                    .row
+                        .col-lg-8.offset-lg-2.col-md-10.offset-md-1.col-sm-12.col-xs-12
+                            .hr
+                    .row
+                        .col-lg-6.offset-lg-3.col-md-6.offset-md-3.col-sm-12.col-xs-12
+                            .row#infor-user-token
+                                
+
+
+
+    script(src='/assets/plugins/magnific/jquery.magnific-popup.js')
+    script(src='/javascript/dashboard/dashboard_v2.js')
+    
+    
+ 
+    script.
+        function copyClipboard(cmd) {
+            var copyText;
+            copyText = document.getElementById("wallet-address");
+            console.log(copyText);
+            copyText.select();
+            document.execCommand("Copy");
+        }
+        function myfunction(n){
+            //- var source;
+            //- if(e == 0){
+            //-       source = '<div class="modal-dialog"><div class="modal-content" ><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Unlock: '+$('#address_unlock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            //- }else source = '<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">QR Code Address wallet Lock: '+$('#address_lock').val()+'</h4></div><div class="modal-body"><center><img class="qr-phone" src='+$(n).data("qr_code")+'></center></div></div></div>'
+            var str = "https://chart.googleapis.com/chart?chs=166x166&chld=L|0&cht=qr&chl="+$('#wallet-address').val();
+            console.log(str);
+            var strVar="";
+
+            strVar += "  <div class=\"col-lg-4 divcenter\">";
+            strVar += "<div class=\"alert address-form\">";
+            strVar +="<div style= 'border-bottom: 1px solid #e9ecef;'>"
+            strVar += " <button type=\"button\" class=\"close\" onclick='$.magnificPopup.instance.close()'>&times;<\/button>";
+            strVar += "   <center><h4 class=\"alert-heading\">Address wallet<\/h4>";
+            strVar += "   <p style='font-size:12px'>"+$('#wallet-address').val()+"<\/p></center>";
+            
+            strVar +="</div>"
+            strVar += "        <div class=\"address-form\">";
+            strVar += "          <div class=\"form-valide\">";
+            strVar += "            <div class=\"form-group row \" style='margin-top:10px'>";
+            strVar += "                 <img class='divcenter qr-phone' src='"+str+"' alt='"+str+"'><\/img>";
+            strVar += "            <\/div>";
+            strVar += "          <\/div>";
+            strVar += "        <\/div>";
+            strVar += "      <\/div>";
+            strVar += "    <\/div>";
+            strVar += "  <\/div>";
+            
+
+            $.magnificPopup.open({
+                delegate:'button',
+                items: {
+                    src: strVar,
+                    type: 'inline',
+                }, showCloseBtn: false,
+                
+            });
+        
+        }
+    
+
+        

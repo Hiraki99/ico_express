@@ -1,0 +1,127 @@
+extends ../../layoutadmin
+block content_dashboard
+    link(rel='stylesheet', href='/assets/plugins/wysihtml5/css/bootstrap-wysihtml5.css')
+    
+    .form-group
+        .row
+            .col-12
+                .card
+                    if(!data)
+                        form#formadvisor.card-body(action='/admin/addnewadvisor',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Advisor Name:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='advisorname', value='')
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Advisor Image:
+                            input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                    div(ref='uploadForm')
+                                        img#image_front
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                h4.card-title Detail Advisor
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                div
+                                    textarea#descript_advisor.textarea_editor.form-control(name='detailadvisor',rows='15', placeholder='Enter text ...', style='height:450px')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Linkedin:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='linkedin', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Facebook:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='facebook', value='')
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Twitter:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='twitter', value='')
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Submit
+                    else
+                        form#formadvisor.card-body(action='/admin/modifyadvisor',method="post",accept-charset="utf-8",encType="multipart/form-data")
+                            
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Advisor Name:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='advisorname', value=data.name)
+                            input.form-control(type='text',style='display:none', name='id_advisor', value=data.id)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Advisor Image:
+                            
+                            input.col-lg-12.col-md-12.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;margin-bottom: 20px;',type='file', name='image_front' id="file_image",accept=".jpg, .jpeg, .png")
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                .dropzone.dz-clickable.dz-started.dropzone_notext(action='#')
+                                    div(ref='uploadForm')
+                                        img(src='/image_advisor/'+data.url_img)#image_front
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Status Advisor:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                select#val_identification.form-control(name='val_status')
+                                    option(value='enable',selected =(data.status == 'enable') ) Enable
+                                    option(value='disable',selected =(data.status == 'disable')) Disable
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                h4.card-title Detail Advisor
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                div
+                                    textarea#descript_advisor.textarea_editor.form-control(name='detailadvisor',rows='15', placeholder='Enter text ...', style='height:450px',data-content=data.information)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Linkedin:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='linkedin', value=data.linkedin)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Facebook:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='facebook', value=data.facebook)
+                            label.col-lg-2.col-md-2.col-sm-2.col-xs-12.control-label(style='margin:2vh 0px;')
+                                span(data-toggle='tooltip', title='') Twitter:
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                input.form-control(type='text', name='twitter', value=data.twitter)
+                            .col-lg-11.col-md-11.col-sm-11.col-xs-11
+                                button.btn.btn-primary(type='submit',style="margin:3vh 39vw;padding:2vh 1vw;font-size:20px;") Update
+    link(href='/assets/plugins/dropzone-master/dist/dropzone.css', rel='stylesheet', type='text/css')
+    
+    script(src='/assets/plugins/wysihtml5/js/wysihtml5-0.3.0.js')
+    script(src='/assets/plugins/wysihtml5/js/bootstrap-wysihtml5.js')
+    
+    script.
+        document.getElementById("file_image").onchange = function () {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("image_front").src = e.target.result;
+            };
+            reader.readAsDataURL(this.files[0]);
+        };
+        $(document).ready(function() {
+            $('#descript_advisor').wysihtml5();
+            var editorObj = $("#descript_advisor").data('wysihtml5');
+            var editor = editorObj.editor;
+            editor.setValue($("#descript_advisor").data('content'));
+                $("#formadvisor").on('submit', function (e){
+                
+                if($("#article_title").val()==''){
+                    alert("Error article Title empty");
+                    return false;
+                }
+                if($("#short_title").val()==''){
+                    alert("Short Title Empty");
+                    return false;
+                }
+                if($("#descript_advisor").val()==''){
+                    alert("Error Content News empty");
+                    return false;
+                }
+                if($("#meta_description").val()==''){
+                    alert("Error Meta Description empty");
+                    return false;
+                }
+                if($("#meta_keyword").val()==''){
+                    alert("Error Meta Keyword empty");
+                    return false;
+                }
+            });
+        });
+
+    

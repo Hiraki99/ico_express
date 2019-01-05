@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8',name='csrf-token', content=_csrf)
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title ICO Admin
+        // Favicon icon
+        link(rel='shortcut icon', href='/images/favicon.png')
+        link(href='/css/style.css', rel='stylesheet')   
+
+    body
+        #icoAdmin.icoAdmin
+            .icoAdmin-overlay-box
+            .icoAdmin-container
+                .icoAdmin-main-container
+                    .icoAdmin-wrapper
+                        .icoAdmin-content.contain-notfound
+                            .icoAdmin-inner-content.container-fluid
+                                include partials/script_init
+                            
+                                .justify-content-center
+                                    .col-lg-4.offset-lg-4
+                                        .login-content.card
+                                            .login-form
+                                                div
+                                                    img.notfound(src='/images/404.jpeg')    
+                                                    button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type='submit',onclick='window.location.href="/"') Go Landing Page
+    

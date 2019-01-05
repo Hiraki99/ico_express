@@ -1,0 +1,128 @@
+doctype html
+html(lang='en')
+    head
+        //- meta(charset='utf-8',name='csrf-token', content=_csrf)
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title ICO Admin - Cryptocurrency Dashboard UI Kit
+        // Favicon icon
+        link(rel='shortcut icon', href='/images/favicon.png')
+        link(href='/css/style.css', rel='stylesheet')   
+        script(src='/socket.io/socket.io.js')
+    body
+        #icoAdmin.icoAdmin
+            .icoAdmin-overlay-box
+            .icoAdmin-container
+                header.icoAdmin-header
+                    .icoAdmin-wrapper
+                        .icoAdmin-left-header
+                            .icoAdmin-logo
+                              span.logo-icon
+                                i.cc.BTC
+                              
+                        .icoAdmin-right-header
+                            .sidebar_toggle
+                                a(href='javascript:void(0)')
+                                    i.icon-menu
+                          
+                            .icoAdmin-rr-header
+                              center
+                                img.loading#loading-notification(src='/images/loading.gif',style='max-width:50px')
+                              ul#notifiall(style='display:none')
+                                li.icons( onclick='updatenotify();')
+                                  a#count(href='javascript:void(0)')
+                                    i.fa.fa-bell(aria-hidden='true')
+                                    span#count_newnotify.icoAdmin-badge.badge-success 2
+                                  .drop-down
+                                    .dropdown-content-heading
+                                      span.text-left Recent Notifications
+                                    #all_noti.dropdown-content-body
+                                      ul
+                                        
+                                        li.text-center
+                                          a.more-link(href='/dashboard/notify') See All
+                                li.icons
+                                
+                                  a(href='javascript:void(0)')
+                                    i.fa.fa-user(aria-hidden='true')
+                                    span(style='margin-left:10px;margin-top:5px') #{session.user_name}
+                                  .drop-down.dropdown-profile
+                                    .dropdown-content-body
+                                      ul
+                                        li
+                                          a(href='/dashboard/profile')
+                                            i.ti-settings
+                                            span Profile
+                                        li
+                                          a(href='/account/changePassword')
+                                            i.ti-lock
+                                            span Change Password
+                                        li
+                                          a(href='/logout')
+                                            i.icon-logout
+                                            span Logout
+                                            
+                                  
+                .icoAdmin-main-container
+                    
+                  nav.icoAdmin-navbar
+                    .sidebar_toggle
+                      a(href='#')
+                        i.icon-close.icons
+                    .icoAdmin-inner-navbar
+                      
+                          
+                      ul.icoAdmin-item.icoAdmin-brand.icoAdmin-left-item
+                        li
+                          a(href='/dashboard')
+                            span.icoAdmin-micon
+                              i.icon-speedometer
+                            span.icoAdmin-mtext DashBoard
+                      .icoAdmin-navigatio-lavel Account
+                      ul.icoAdmin-item.icoAdmin-left-item
+                        li
+                          a(href='/dashboard/wallet')
+                            span.icoAdmin-micon
+                              i.icon-wallet
+                            span.icoAdmin-mtext Wallet
+                      ul.icoAdmin-item.icoAdmin-left-item
+                        
+                      ul.icoAdmin-item.icoAdmin-left-item
+                        li
+                          a(href='/dashboard/kyc')
+                            span.icoAdmin-micon
+                              i.icon-settings
+                            span.icoAdmin-mtext KYC
+                        li
+                          a(href='/account/authy')
+                            span.icoAdmin-micon
+                              i.icon-shield
+                            span.icoAdmin-mtext Auth
+                      .icoAdmin-navigatio-lavel Bonus
+                      ul.icoAdmin-item.icoAdmin-left-item
+                        li
+                          a(href='/dashboard/ico')
+                            span.icoAdmin-micon
+                              i.icon-graph
+                            span.icoAdmin-mtext Bonus Details
+                        li
+                          a(href='/dashboard/referal')
+                            span.icoAdmin-micon
+                              i.ti-link
+                            span.icoAdmin-mtext Referal
+                        li
+                          a(href='/dashboard/airdrop')
+                            span.icoAdmin-micon
+                              i.icon-diamond
+                            span.icoAdmin-mtext Airdrop
+
+                  .icoAdmin-content
+                      .icoAdmin-inner-content.container-fluid
+                          include partials/new_header_dashboard
+                          include partials/script_init
+                          block content_dashboard
+    
+    script(src='/javascript/common.js') 
+
+
+    

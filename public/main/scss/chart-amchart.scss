@@ -1,0 +1,37 @@
+@import "variable.scss";
+
+.amcharts-data-set-selector-div {
+    position  : absolute;
+    left      : 0;
+    right     : 0;
+    text-align: center;
+    width     : 270px;
+    margin    : 0 auto;
+
+    select {
+        background : #070713;
+        border     : 0;
+        color      : #ddd;
+        margin-left: 10px;
+    }
+}
+
+.amChartsInputField {
+    background: #070713;
+    border    : 0;
+    color     : #ddd;
+}
+
+.amcharts-data-set-select {
+    background: #070713;
+    border    : 0;
+    color     : #ddd;
+}
+
+.amcharts-period-input,
+.amcharts-period-input-selected {
+    background : $primary;
+    border     : 0;
+    color      : #fff;
+    margin-left: 10px;
+}
